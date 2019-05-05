@@ -17,25 +17,26 @@ class App extends Component {
         gameOver: 0,
     };
 
-
     constructor() {
+        // In the constructor the state is not mounted so we must directly assign values
         super();
         this.state = this.defaultState;
+        let box = [];
+        this.initTable(box);
+        this.state.box = box;
+    }
 
-        // this.setState({state:this.defaultState});
-
-        // Create state of table
+    initTable = (box) => {
         for (let i=0;i<d;i++)
         {
             // Init row as array
-            this.state.box[i] = [];
+            box[i] = [];
 
             for (let j=0;j<d;j++)
             {
-                this.state.box[i][j] = j+d*i+1;
+                box[i][j] = j+d*i+1;
             }
         }
-
     }
 
     renderTable = () => {
@@ -114,6 +115,9 @@ class App extends Component {
               Moves: { this.state.moveCounter } <br/>
               Game notation: { this.renderGameLog() }<br/>
               { this.state.gameOver ? <div>Game Over!<br/><button onClick={()=>{ this.setState({...this.defaultState });
+                  let box = this.state.box;
+                  this.initTable(box);
+                  this.setState({box:box});
               }}>New Game</button></div> : null }
           </div>
       )
