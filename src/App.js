@@ -9,14 +9,20 @@ const style = {'width': d*6 + 'em'};
 
 class App extends Component {
 
-    state = {
+    defaultState = {
         box:[[]],
         round:0,
         moveCounter:0,
+        game:[],
+        gameOver: 0,
     };
+
 
     constructor() {
         super();
+        this.state = this.defaultState;
+
+        // this.setState({state:this.defaultState});
 
         // Create state of table
         for (let i=0;i<d;i++)
@@ -54,6 +60,9 @@ class App extends Component {
             this.setState({box:box});
             this.changeRound();
             this.moveCounterIncrement();
+            this.checkGameOver();
+            // console.log(this.state.gameOver);
+            this.logMove(i,j);
         }
     };
 
@@ -67,6 +76,29 @@ class App extends Component {
         this.setState({moveCounter:moveCounter});
     };
 
+    logMove = (i,j) => {
+        let boxNumber = j+d*i+1;
+        let game = this.state.game.slice();
+        game.push(boxNumber);
+        this.setState({game:game});
+    };
+
+    renderGameLog = () => this.state.game.map(
+            (game, i) => {
+                let buffer = '';
+                i % 2 ? buffer = 'O' + game : buffer = 'X' + game;
+                buffer += (this.state.gameOver === 1 && i === this.state.game.length - 1) ? '': '→';
+                return buffer
+            }
+        );
+
+    checkGameOver = () => {
+        let gameOver = this.state.gameOver;
+        if (this.state.moveCounter === d * d - 1) gameOver = 1;
+        this.setState({gameOver:gameOver});
+    }
+
+
   render() {
 
       return (
@@ -79,7 +111,10 @@ class App extends Component {
               <hr/>
               {/*<button className={ 'btn btn-lg' }  onClick={()=>alert("ok")}>Try me!</button>*/}
               Round: { this.state.round ? 'O' : 'X'} <br/>
-              Moves: { this.state.moveCounter }
+              Moves: { this.state.moveCounter } <br/>
+              Game notation: { this.renderGameLog() }<br/>
+              { this.state.gameOver ? <div>Game Over!<br/><button onClick={()=>{ this.setState({...this.defaultState });
+              }}>New Game</button></div> : null }
           </div>
       )
 
