@@ -3,12 +3,13 @@ import './App.css';
 import Box from './Box/Box';
 import Row from './Row/Row';
 
-const d = 3;
-const style = {'width': d*6 + 'em'};
+let d = 3;
+let style = {'width': d*6 + 'em'};
 
 
 class App extends Component {
 
+    // We create a default state, so we can reset the game (new game).
     defaultState = {
         box:[[]],
         round:0,
@@ -99,12 +100,26 @@ class App extends Component {
         this.setState({gameOver:gameOver});
     }
 
+    setTableDimension = ()=>{
+        style = {'width': d*6 + 'em'};
+        this.resetGame();
+    }
+
+    incTable = () => {d++;this.setTableDimension()};
+    decTable = () => {d--;this.setTableDimension()};
+
+    resetGame = ()=> {
+        this.setState({...this.defaultState });
+        let box = this.state.box;
+        this.initTable(box);
+        this.setState({box:box});
+    }
 
   render() {
 
       return (
           <div className="App" style={style}>
-              <h1>{d}-liza</h1>
+              <h1>{d}-liza <button onClick={ ()=>{this.decTable();} }>-</button><button onClick={ ()=>{this.incTable();} }>+</button></h1>
 
               { this.renderTable() }
 
@@ -114,11 +129,7 @@ class App extends Component {
               Round: { this.state.round ? 'O' : 'X'} <br/>
               Moves: { this.state.moveCounter } <br/>
               Game notation: { this.renderGameLog() }<br/>
-              { this.state.gameOver ? <div>Game Over!<br/><button onClick={()=>{ this.setState({...this.defaultState });
-                  let box = this.state.box;
-                  this.initTable(box);
-                  this.setState({box:box});
-              }}>New Game</button></div> : null }
+              { this.state.gameOver ? <div>Game Over!<br/><button onClick={()=>{  this.resetGame(); }}>New Game</button></div> : null }
           </div>
       )
 
