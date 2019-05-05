@@ -51,7 +51,7 @@ class App extends Component {
             table.push( <Row key={'row_'+i}>{row}</Row> )
         }
 
-        return  table;
+        return table;
     };
 
     clickHandler = (i,j) => {
@@ -60,10 +60,10 @@ class App extends Component {
             let box = this.state.box.slice();
             box[i][j]= this.state.round ? 'O' : 'X';
             this.setState({box:box});
+            //todo checkTable
             this.changeRound();
             this.moveCounterIncrement();
             this.checkGameOver();
-            // console.log(this.state.gameOver);
             this.logMove(i,j);
         }
     };
@@ -98,7 +98,7 @@ class App extends Component {
         let gameOver = this.state.gameOver;
         if (this.state.moveCounter === d * d - 1) gameOver = 1;
         this.setState({gameOver:gameOver});
-    }
+    };
 
     incTable = () => {d++;this.resetGame();};
     decTable = () => {d--;this.resetGame();};
@@ -108,7 +108,7 @@ class App extends Component {
         let box = this.state.box;
         this.initTable(box);
         this.setState({box:box});
-    }
+    };
 
   render() {
       let style = {'width': d*6 + 'em'};
@@ -121,7 +121,6 @@ class App extends Component {
 
               <br style={ {'clear':'both'} }/>
               <hr/>
-              {/*<button className={ 'btn btn-lg' }  onClick={()=>alert("ok")}>Try me!</button>*/}
               Round: { this.state.round ? 'O' : 'X'} <br/>
               Moves: { this.state.moveCounter } <br/>
               Game notation: { this.renderGameLog() }<br/>
