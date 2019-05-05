@@ -1,0 +1,11 @@
+.Box {
+    border: 1px solid black;
+    width:5rem;
+    height:5rem;
+    float:left;
+    margin:5px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 77px;
+    background: #ccc;
+}
