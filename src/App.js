@@ -3,8 +3,8 @@ import './App.css';
 import Box from './Box/Box';
 import Row from './Row/Row';
 
-let d = 3;
-let style = {'width': d*6 + 'em'};
+
+let d = 3; // Dimension of table
 
 
 class App extends Component {
@@ -100,13 +100,8 @@ class App extends Component {
         this.setState({gameOver:gameOver});
     }
 
-    setTableDimension = ()=>{
-        style = {'width': d*6 + 'em'};
-        this.resetGame();
-    }
-
-    incTable = () => {d++;this.setTableDimension()};
-    decTable = () => {d--;this.setTableDimension()};
+    incTable = () => {d++;this.resetGame();};
+    decTable = () => {d--;this.resetGame();};
 
     resetGame = ()=> {
         this.setState({...this.defaultState });
@@ -116,6 +111,7 @@ class App extends Component {
     }
 
   render() {
+      let style = {'width': d*6 + 'em'};
 
       return (
           <div className="App" style={style}>
