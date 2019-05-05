@@ -12,6 +12,7 @@ class App extends Component {
     state = {
         box:[[]],
         round:0,
+        moveCounter:0,
     };
 
     constructor() {
@@ -46,15 +47,24 @@ class App extends Component {
     };
 
     clickHandler = (i,j) => {
-        let box = this.state.box.slice();
-        box[i][j]= this.state.round ? 'O' : 'X';
-        this.setState({box:box});
-        this.changeRound();
+
+        if (this.state.box[i][j]!=='X' && this.state.box[i][j]!=='O') {
+            let box = this.state.box.slice();
+            box[i][j]= this.state.round ? 'O' : 'X';
+            this.setState({box:box});
+            this.changeRound();
+            this.moveCounterIncrement();
+        }
     };
 
     changeRound = () => {
-        let round = (this.state.round) ? 0:1;
+        let round = (this.state.round) ? 0 : 1;
         this.setState({round:round});
+    };
+
+    moveCounterIncrement = () => {
+        let moveCounter = this.state.moveCounter + 1;
+        this.setState({moveCounter:moveCounter});
     };
 
   render() {
@@ -68,7 +78,8 @@ class App extends Component {
               <br style={ {'clear':'both'} }/>
               <hr/>
               {/*<button className={ 'btn btn-lg' }  onClick={()=>alert("ok")}>Try me!</button>*/}
-              Round: { this.state.round ? 'O' : 'X'}
+              Round: { this.state.round ? 'O' : 'X'} <br/>
+              Moves: { this.state.moveCounter }
           </div>
       )
 
