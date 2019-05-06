@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Box from './Box/Box';
 import Row from './Row/Row';
+import Gameover from './Gameover/Gameover';
 
 
 let d = 3; // Dimension of table
@@ -16,6 +17,9 @@ class App extends Component {
         moveCounter:0,
         game:[],
         gameOver: 0,
+        win:0,
+        scoreX: 0,
+        scoreO: 0,
     };
 
     constructor() {
@@ -60,13 +64,52 @@ class App extends Component {
             let box = this.state.box.slice();
             box[i][j]= this.state.round ? 'O' : 'X';
             this.setState({box:box});
-            //todo checkTable
+            this.checkIfWin(i,j);
             this.changeRound();
             this.moveCounterIncrement();
             this.checkGameOver();
             this.logMove(i,j);
         }
     };
+
+    checkIfWin = (i,j) => {
+      let box = this.state.box;
+      let mark = this.state.round ? 'O' : 'X';
+      let win = 0;
+
+        if (i-1>=0 && i+1<d)
+            if (box[i-1][j] === mark && box[i+1][j] === mark) win++;
+
+        if (j-1>=0 && j+1<d)
+            if (box[i][j-1] === mark && box[i][j+1] === mark) win++;
+
+        if (i-2>=0)
+            if (box[i-1][j] === mark && box[i-2][j] === mark) win++;
+
+        if (j-2>=0)
+            if (box[i][j-1] === mark && box[i][j-2] === mark) win++;
+
+        if (i+2<d)
+            if (box[i+1][j] === mark && box[i+2][j] === mark) win++;
+
+        if (j+2<d)
+            if (box[i][j+1] === mark && box[i][j+2] === mark) win++;
+
+
+        if (mark==='X') {
+            let scoreX = this.state.scoreX + win;
+            this.setState({scoreX:scoreX});
+        }
+        else
+        {
+            let scoreO = this.state.scoreO + win;
+            this.setState({scoreO:scoreO});
+        }
+
+      // console.log(i,j,mark,win)
+      // return win;
+    };
+
 
     changeRound = () => {
         let round = (this.state.round) ? 0 : 1;
@@ -101,7 +144,7 @@ class App extends Component {
     };
 
     incTable = () => {d++;this.resetGame();};
-    decTable = () => {d--;this.resetGame();};
+    decTable = () => {if (d>3) { d--;this.resetGame();}};
 
     resetGame = ()=> {
         this.setState({...this.defaultState });
@@ -124,7 +167,11 @@ class App extends Component {
               Round: { this.state.round ? 'O' : 'X'} <br/>
               Moves: { this.state.moveCounter } <br/>
               Game notation: { this.renderGameLog() }<br/>
-              { this.state.gameOver ? <div>Game Over!<br/><button onClick={()=>{  this.resetGame(); }}>New Game</button></div> : null }
+              Score (X-O) : {this.state.scoreX}-{this.state.scoreO}<br/>
+              { this.state.win ? <div>Win!<br/></div> : null }
+              { this.state.gameOver ? <Gameover resetGame={()=>this.resetGame()}
+                                                scoreX={this.state.scoreX}
+                                                scoreO={this.state.scoreO}/> : null }
           </div>
       )
 
