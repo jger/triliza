@@ -10,7 +10,6 @@ const gameover = (props) => {
                 { props.scoreO===props.scoreX ? 'Tie' : props.scoreO>props.scoreX ? 'O wins the game!' : 'X wins the game!'}
             </h4>
             <h3>Game Over!</h3>
-            <button onClick={props.resetGame}>New Game</button>
         </div>
 
     )

@@ -3,6 +3,7 @@ import './App.css';
 import Box from './Box/Box';
 import Row from './Row/Row';
 import Gameover from './Gameover/Gameover';
+import Newgame from './Buttons/Newgame/Newgame';
 
 
 let d = 3; // Dimension of table
@@ -169,9 +170,10 @@ class App extends Component {
               Game notation: { this.renderGameLog() }<br/>
               Score (X-O) : {this.state.scoreX}-{this.state.scoreO}<br/>
               { this.state.win ? <div>Win!<br/></div> : null }
-              { this.state.gameOver ? <Gameover resetGame={()=>this.resetGame()}
-                                                scoreX={this.state.scoreX}
-                                                scoreO={this.state.scoreO}/> : null }
+              { this.state.gameOver ? <div>
+                  <Gameover scoreX={this.state.scoreX} scoreO={this.state.scoreO}/>
+                  <Newgame resetGame={()=>this.resetGame()}/>
+              </div> : null }
           </div>
       )
 
