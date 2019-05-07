@@ -97,6 +97,25 @@ class App extends Component {
             if (box[i][j+1] === mark && box[i][j+2] === mark) win++;
 
 
+        if (i-1>=0 && j-1>=0 && i+1<d && j+1<d)
+            if (box[i-1][j-1] === mark && box[i+1][j+1] === mark) win++;
+
+        if (i-2>=0 && j-2>=0)
+            if (box[i-2][j-2] === mark && box[i-1][j-1] === mark) win++;
+
+        if (i+2<d && j+2<d)
+            if (box[i+2][j+2] === mark && box[i+1][j+1] === mark) win++;
+
+        if (i-1>=0 && j-1>=0 && i+1<d && j+1<d)
+            if (box[i+1][j-1] === mark && box[i-1][j+1] === mark) win++;
+
+        if (j-2>=0 && i+2<d)
+            if (box[i+1][j-1] === mark && box[i+2][j-2] === mark) win++;
+
+        if (i-2>=0 && j+2<d)
+            if (box[i-1][j+1] === mark && box[i-2][j+2] === mark) win++;
+
+
         if (mark==='X') {
             let scoreX = this.state.scoreX + win;
             this.setState({scoreX:scoreX});
