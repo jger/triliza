@@ -96,24 +96,21 @@ class App extends Component {
         if (j+2<d)
             if (box[i][j+1] === mark && box[i][j+2] === mark) win++;
 
-
-        if (i-1>=0 && j-1>=0 && i+1<d && j+1<d)
-            if (box[i-1][j-1] === mark && box[i+1][j+1] === mark) win++;
-
         if (i-2>=0 && j-2>=0)
             if (box[i-2][j-2] === mark && box[i-1][j-1] === mark) win++;
 
         if (i+2<d && j+2<d)
             if (box[i+2][j+2] === mark && box[i+1][j+1] === mark) win++;
 
-        if (i-1>=0 && j-1>=0 && i+1<d && j+1<d)
-            if (box[i+1][j-1] === mark && box[i-1][j+1] === mark) win++;
-
+        if (i-1>=0 && j-1>=0 && i+1<d && j+1<d) {
+            if (box[i + 1][j - 1] === mark && box[i - 1][j + 1] === mark) win++;
+            if (box[i - 1][j - 1] === mark && box[i + 1][j + 1] === mark) win++;
+        }
         if (j-2>=0 && i+2<d)
-            if (box[i+1][j-1] === mark && box[i+2][j-2] === mark) win++;
+            if (box[i + 1][j - 1] === mark && box[i + 2][j - 2] === mark) win++;
 
         if (i-2>=0 && j+2<d)
-            if (box[i-1][j+1] === mark && box[i-2][j+2] === mark) win++;
+            if (box[i - 1][j + 1] === mark && box[i - 2][j + 2] === mark) win++;
 
 
         if (mark==='X') {
@@ -178,7 +175,9 @@ class App extends Component {
 
       return (
           <div className="App" style={style}>
-              <h1>{d}-liza <button onClick={ ()=>{this.decTable();} }>-</button><button onClick={ ()=>{this.incTable();} }>+</button></h1>
+              <h1>{d}-liza
+                  <button className={['incdec']} onClick={ ()=>{this.decTable();} }>-</button>
+                  <button className={['incdec']} onClick={ ()=>{this.incTable();} }>+</button></h1>
 
               { this.renderTable() }
 
