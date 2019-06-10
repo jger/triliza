@@ -1,4 +1,14 @@
+## This is the clasical game Tic-Tac-Toe implemented in ReactJS 
+Now you can play in higher dimensions!
+Until now there is only two player mode.
+In the future planed a more better UI and player vs computer mode.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation
+
+In the project directory run:
+
+### `npm install`
 
 ## Available Scripts
 
