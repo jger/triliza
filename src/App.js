@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import { View, Text, StyleSheet } from 'react-native-web';
 import Box from './Box/Box';
 import Row from './Row/Row';
 import Gameover from './Gameover/Gameover';
@@ -171,32 +171,77 @@ class App extends Component {
     };
 
   render() {
-      let style = {'width': d*6 + 'em'};
+      const containerStyle = {
+          ...styles.container,
+          width: d*6 + 'em'
+      };
 
       return (
-          <div className="App" style={style}>
-              <h1>{d}-liza
-                  <button className={['incdec']} onClick={ ()=>{this.decTable();} }>-</button>
-                  <button className={['incdec']} onClick={ ()=>{this.incTable();} }>+</button></h1>
+          <View style={containerStyle}>
+              <View style={styles.header}>
+                  <Text style={styles.title}>{d}-liza</Text>
+                  <View style={styles.buttonContainer}>
+                      <Text style={styles.button} onPress={() => this.decTable()}>-</Text>
+                      <Text style={styles.button} onPress={() => this.incTable()}>+</Text>
+                  </View>
+              </View>
 
               { this.renderTable() }
 
-              <br style={ {'clear':'both'} }/>
-              <hr/>
-              Round: { this.state.round ? 'O' : 'X'} <br/>
-              Moves: { this.state.moveCounter } <br/>
-              Game notation: { this.renderGameLog() }<br/>
-              Score (X-O) : {this.state.scoreX}-{this.state.scoreO}<br/>
-              { this.state.win ? <div>Win!<br/></div> : null }
-              { this.state.gameOver ? <div>
-                  <Gameover scoreX={this.state.scoreX} scoreO={this.state.scoreO}/>
-                  <Newgame resetGame={()=>this.resetGame()}/>
-              </div> : null }
-          </div>
+              <View style={styles.gameInfo}>
+                  <Text>Round: { this.state.round ? 'O' : 'X'}</Text>
+                  <Text>Moves: { this.state.moveCounter }</Text>
+                  <Text>Game notation: { this.renderGameLog() }</Text>
+                  <Text>Score (X-O) : {this.state.scoreX}-{this.state.scoreO}</Text>
+                  { this.state.win ? <Text>Win!</Text> : null }
+                  { this.state.gameOver ? <View>
+                      <Gameover scoreX={this.state.scoreX} scoreO={this.state.scoreO}/>
+                      <Newgame resetGame={()=>this.resetGame()}/>
+                  </View> : null }
+              </View>
+          </View>
       )
 
   }
 
 }
+
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        margin: 'auto',
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginRight: 10,
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+    },
+    button: {
+        textAlign: 'center',
+        padding: 8,
+        margin: 4,
+        fontSize: 16,
+        backgroundColor: '#f0f0f0',
+        minWidth: 30,
+        minHeight: 30,
+        borderRadius: 4,
+        cursor: 'pointer',
+    },
+    gameInfo: {
+        marginTop: 20,
+        paddingTop: 20,
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+        alignItems: 'center',
+    },
+});
 
 export default App;

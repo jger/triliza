@@ -1,8 +1,8 @@
-## This is the clasical game Tic-Tac-Toe implemented in ReactJS 
+## This is the clasical game Tic-Tac-Toe implemented in React Native Web
 Now you can play in higher dimensions!
 Until now there is only two player mode.
 In the future planed a more better UI and player vs computer mode.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and converted to React Native Web.
 
 ## Installation
 
@@ -16,11 +16,19 @@ In the project directory, you can run:
 
 ### `npm start`
 
+**Note:** Due to the older version of react-scripts, you need to run:
+
+```bash
+NODE_OPTIONS="--openssl-legacy-provider" npm start
+```
+
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+To stop the development server, press `Ctrl+C` in the terminal where it's running.
 
 ### `npm test`
 

@@ -1,18 +1,30 @@
 import React from 'react';
-
+import { View, Text, StyleSheet } from 'react-native-web';
 
 const gameover = (props) => {
-
     return (
-
-        <div>
-            <h4>
+        <View style={styles.container}>
+            <Text style={styles.winner}>
                 { props.scoreO===props.scoreX ? 'Tie' : props.scoreO>props.scoreX ? 'O wins the game!' : 'X wins the game!'}
-            </h4>
-            <h3>Game Over!</h3>
-        </div>
-
+            </Text>
+            <Text style={styles.gameOver}>Game Over!</Text>
+        </View>
     )
 };
 
-export default (gameover);
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    winner: {
+        fontSize: 18,
+        marginBottom: 5,
+    },
+    gameOver: {
+        fontSize: 22,
+        fontWeight: 'bold',
+    },
+});
+
+export default gameover;

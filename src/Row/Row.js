@@ -1,18 +1,19 @@
 import React from 'react';
-import './Row.css'
-
+import { View, StyleSheet } from 'react-native-web';
 
 const row = (props) => {
-
-
     return (
-
-        <div className='Row'>
+        <View style={styles.row}>
             {props.children}
-        </div>
-
-
+        </View>
     )
 };
 
-export default (row);
+const styles = StyleSheet.create({
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+});
+
+export default row;
