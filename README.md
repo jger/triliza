@@ -2,6 +2,9 @@
 Now you can play in higher dimensions!
 Until now there is only two player mode.
 In the future planed a more better UI and player vs computer mode.
+
+**Play the game online:** [https://jger.github.io/triliza/](https://jger.github.io/triliza/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and converted to React Native Web.
 
 ## Installation
