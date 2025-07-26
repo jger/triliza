@@ -1,0 +1,62 @@
+import React from 'react';
+import { View, StyleSheet } from 'react-native-web';
+import { useGameState } from '../../hooks/useGameState';
+import Board from '../Board/Board';
+import GameInfo from '../GameInfo/GameInfo';
+import GameControls from './GameControls';
+import { GAME_CONFIG } from '../../utils/constants';
+
+const Game = () => {
+  const { gameState, actions } = useGameState();
+
+  const handleDimensionDecrease = () => {
+    if (gameState.dimension > GAME_CONFIG.MIN_DIMENSION) {
+      actions.changeDimension(gameState.dimension - 1);
+    }
+  };
+
+  const handleDimensionIncrease = () => {
+    actions.changeDimension(gameState.dimension + 1);
+  };
+
+  const containerStyle = {
+    ...styles.container,
+    width: gameState.dimension * 6 + 'em',
+  };
+
+  return (
+    <View style={containerStyle}>
+      <GameControls
+        dimension={gameState.dimension}
+        onDecrease={handleDimensionDecrease}
+        onIncrease={handleDimensionIncrease}
+        onNewGame={actions.resetGame}
+      />
+      
+      <Board
+        board={gameState.board}
+        onCellPress={actions.makeMove}
+        gameStatus={gameState.gameStatus}
+      />
+      
+      <GameInfo
+        currentPlayer={gameState.currentPlayer}
+        moveCounter={gameState.moveCounter}
+        gameHistory={gameState.gameHistory}
+        scoreX={gameState.scoreX}
+        scoreO={gameState.scoreO}
+        gameStatus={gameState.gameStatus}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    margin: 'auto',
+    padding: 20,
+  },
+});
+
+export default Game;
