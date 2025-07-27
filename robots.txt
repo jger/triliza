@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jger.github.io/triliza/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 
