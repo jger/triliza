@@ -5,6 +5,7 @@ import { useResponsiveBoard } from '../../hooks/useResponsiveBoard';
 import Board from '../Board/Board';
 import GameInfo from '../GameInfo/GameInfo';
 import GameControls from './GameControls';
+import Version from '../Version/Version';
 import { GAME_CONFIG } from '../../constants/constants';
 
 const Game = () => {
@@ -53,6 +54,8 @@ const Game = () => {
         scoreO={gameState.scoreO}
         gameStatus={gameState.gameStatus}
       />
+      
+      <Version />
     </View>
   );
 };

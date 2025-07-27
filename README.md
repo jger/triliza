@@ -15,6 +15,7 @@ A modern implementation of the classic Tic-Tac-Toe game built with React Native 
 - **Responsive design** - Works perfectly on desktop and mobile devices
 - **Modern UI** - Clean, intuitive interface built with React
 - **Cross-platform** - Built with React Native Web for universal compatibility
+- **Automatic version display** - Shows current app version in bottom-right corner
 
 ## 🚀 Coming Soon
 
@@ -43,6 +44,45 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Development
+
+```bash
+npm start
+npm test
+npm run build
+```
+
+## Deployment
+
+The app automatically deploys to GitHub Pages when you push to the main branch. The deployment process:
+
+1. **Semantic Release**: Automatically determines version based on commit messages
+2. **Build**: Creates production build with version injected
+3. **Deploy**: Publishes to GitHub Pages
+
+### Commit Message Format
+
+Use conventional commits for automatic versioning:
+
+- `feat:` - New features (minor version bump)
+- `fix:` - Bug fixes (patch version bump)
+- `BREAKING CHANGE:` - Breaking changes (major version bump)
+
+Example:
+```
+feat: add new game mode
+fix: resolve board rendering issue
+BREAKING CHANGE: change game API
+```
+
+## Version Display
+
+The app automatically displays the current version in the bottom-right corner. This version is:
+
+- Automatically updated by semantic-release
+- Injected during build process
+- Visible in the deployed GitHub Pages app
 
 ## License
 
