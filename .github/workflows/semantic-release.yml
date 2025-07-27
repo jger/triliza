@@ -42,8 +42,8 @@ jobs:
         if: success()
         run: |
           NEW_VERSION=$(node -p "require('./package.json').version")
-          sed -i "s/Current Version: .*/Current Version: $NEW_VERSION/" README.md
-          sed -i "s/Version: .*/Version: $NEW_VERSION/" README.md
+          sed -i "s/\*\*Current Version: .*\*\*/**Current Version: $NEW_VERSION**/" README.md
+          sed -i "s/\*\*Version: .*\*\*/**Version: $NEW_VERSION**/" README.md
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
