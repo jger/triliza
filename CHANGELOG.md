@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/jger/triliza/compare/v1.0.1...v1.0.2) (2025-07-27)
+
+
+### Bug Fixes
+
+* update README version format in semantic-release workflow ([7c4669d](https://github.com/jger/triliza/commit/7c4669df7356465e676b55337bca3006a8f5012d))
+
 ## [1.0.1](https://github.com/jger/triliza/compare/v1.0.0...v1.0.1) (2025-07-27)
 
 
