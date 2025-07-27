@@ -15,7 +15,9 @@ const MultiplayerControls = ({
   onHandleAnswer,
   onCopyConnectionData,
   showMultiplayer,
-  onToggleMultiplayer
+  onToggleMultiplayer,
+  gameStatus,
+  onNewGame
 }) => {
   const [hostConnectionData, setHostConnectionData] = useState('');
   const [guestAnswer, setGuestAnswer] = useState('');
@@ -118,7 +120,7 @@ const MultiplayerControls = ({
         </View>
       </View>
 
-      {gameMode === 'host' && connectionData ? (
+      {gameMode === 'host' && connectionData && connectionStatus !== 'connected' ? (
         <View style={styles.invitationContainer}>
           <Text style={styles.invitationLabel}>Step 1: Share this connection data:</Text>
           <View style={styles.dataContainer}>
@@ -162,7 +164,7 @@ const MultiplayerControls = ({
         </View>
       ) : null}
 
-      {gameMode === 'guest' && connectionData ? (
+      {gameMode === 'guest' && connectionData && connectionStatus !== 'connected' ? (
         <View style={styles.invitationContainer}>
           <Text style={styles.invitationLabel}>Send this response to the host:</Text>
           <View style={styles.dataContainer}>
@@ -185,9 +187,15 @@ const MultiplayerControls = ({
 
       {error ? (
         <View style={styles.errorContainer}>
-                  <Text style={styles.errorText}>{error}</Text>
-      </View>
-    ) : null}
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
+      ) : null}
+
+      {connectionStatus === 'connected' && gameStatus === 'game_over' && onNewGame ? (
+        <TouchableOpacity style={styles.newGameButton} onPress={onNewGame}>
+          <Text style={styles.newGameButtonText}>New Game</Text>
+        </TouchableOpacity>
+      ) : null}
 
       <TouchableOpacity style={styles.disconnectButton} onPress={onDisconnect}>
         <Text style={styles.disconnectButtonText}>Back to Local Game</Text>
@@ -418,6 +426,18 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   disconnectButtonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '600',
+  },
+  newGameButton: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 6,
+    marginBottom: 10,
+  },
+  newGameButtonText: {
     color: 'white',
     textAlign: 'center',
     fontWeight: '600',

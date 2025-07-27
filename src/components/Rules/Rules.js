@@ -144,11 +144,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#e74c3c',
     justifyContent: 'center',
     alignItems: 'center',
+    display: 'flex',
   },
   closeText: {
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
+    lineHeight: 30,
+    margin: 0,
+    padding: 0,
   },
   content: {
     padding: 20,

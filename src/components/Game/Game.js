@@ -64,6 +64,11 @@ const Game = () => {
     setShowMultiplayer(!showMultiplayer);
   };
 
+  const handleDisconnect = () => {
+    disconnect();
+    setShowMultiplayer(false);
+  };
+
   const handleToggleRules = () => {
     setShowRules(!showRules);
   };
@@ -86,11 +91,13 @@ const Game = () => {
         timeRemaining={timeRemaining}
         onCreateGame={createGame}
         onJoinGame={joinGame}
-        onDisconnect={disconnect}
+        onDisconnect={handleDisconnect}
         onHandleAnswer={handleAnswer}
         onCopyConnectionData={copyConnectionData}
         showMultiplayer={showMultiplayer}
         onToggleMultiplayer={handleToggleMultiplayer}
+        gameStatus={gameState.gameStatus}
+        onNewGame={gameMode !== 'local' ? actions.resetGame : null}
       />
       {gameMode === 'local' ? (
         <GameControls
