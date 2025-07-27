@@ -1,0 +1,42 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bg)" rx="64"/>
+  
+  <!-- Game Board Grid -->
+  <g transform="translate(64, 64)">
+    <!-- Vertical lines -->
+    <line x1="96" y1="0" x2="96" y2="384" stroke="white" stroke-width="8" opacity="0.9"/>
+    <line x1="192" y1="0" x2="192" y2="384" stroke="white" stroke-width="8" opacity="0.9"/>
+    <line x1="288" y1="0" x2="288" y2="384" stroke="white" stroke-width="8" opacity="0.9"/>
+    
+    <!-- Horizontal lines -->
+    <line x1="0" y1="96" x2="384" y2="96" stroke="white" stroke-width="8" opacity="0.9"/>
+    <line x1="0" y1="192" x2="384" y2="192" stroke="white" stroke-width="8" opacity="0.9"/>
+    <line x1="0" y1="288" x2="384" y2="288" stroke="white" stroke-width="8" opacity="0.9"/>
+    
+    <!-- Sample X and O for 4x4 grid -->
+    <text x="48" y="72" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="144" y="72" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="240" y="72" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="336" y="72" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="48" y="168" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="144" y="168" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="240" y="168" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="336" y="168" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="48" y="264" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="144" y="264" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="240" y="264" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="336" y="264" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="48" y="360" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="144" y="360" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+    <text x="240" y="360" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">O</text>
+    <text x="336" y="360" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle">X</text>
+  </g>
+</svg> 
