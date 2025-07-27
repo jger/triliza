@@ -1,6 +1,6 @@
 # Triliza - Multi-Dimensional Tic-Tac-Toe Game
 
-**Current Version: 1.0.4**
+**Current Version: 1.1.0**
 
 A modern implementation of the classic Tic-Tac-Toe game built with React Native Web, featuring enhanced gameplay in higher dimensions. Experience the timeless strategy game with a beautiful, responsive interface.
 
