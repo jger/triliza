@@ -85,7 +85,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
       setError('Failed to create game: ' + error.message);
       setConnectionStatus('error');
     }
-  }, [handleConnectionChange, handleDataReceived, connectionData]);
+  }, [handleConnectionChange, handleDataReceived, handleTimerUpdate, connectionData]);
 
   const joinGame = useCallback(async (hostConnectionString) => {
     try {
@@ -133,7 +133,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
       setError('Failed to join game: ' + error.message);
       setConnectionStatus('error');
     }
-  }, [handleConnectionChange, handleDataReceived, connectionData]);
+  }, [handleConnectionChange, handleDataReceived, handleTimerUpdate, connectionData]);
 
   const sendGameState = useCallback((gameState) => {
     console.log('Attempting to send game state:', gameState, 'Connection status:', connectionStatus);
