@@ -15,9 +15,10 @@ export class WebRTCManager {
     return nanoid(6).toUpperCase();
   }
 
-  async createConnection(isHost = true) {
+  async createConnection(isHost = true, invitationCode = null) {
     try {
       this.isHost = isHost;
+      this.invitationCode = invitationCode;
       this.connectionStatus = 'connecting';
       this.onConnectionChange?.('connecting');
 
@@ -42,8 +43,8 @@ export class WebRTCManager {
         const offer = await this.peerConnection.createOffer();
         await this.peerConnection.setLocalDescription(offer);
         
-        // Store offer for guest to pick up
-        localStorage.setItem('hostOffer', JSON.stringify(offer));
+        // Store offer for guest to pick up with invitation code as key
+        localStorage.setItem(`hostOffer_${this.invitationCode}`, JSON.stringify(offer));
         console.log('Host created offer:', offer);
       } else {
         // Guest waits for offer
@@ -76,8 +77,8 @@ export class WebRTCManager {
     if (!this.peerConnection) return;
 
     this.peerConnection.onicecandidate = (event) => {
-      if (event.candidate) {
-        const candidateKey = this.isHost ? 'hostCandidate' : 'guestCandidate';
+      if (event.candidate && this.invitationCode) {
+        const candidateKey = this.isHost ? `hostCandidate_${this.invitationCode}` : `guestCandidate_${this.invitationCode}`;
         localStorage.setItem(candidateKey, JSON.stringify(event.candidate));
         console.log('ICE candidate stored:', candidateKey);
       }
@@ -158,7 +159,7 @@ export class WebRTCManager {
       await this.peerConnection.setLocalDescription(answer);
       
       // Store answer for host to pick up
-      localStorage.setItem('guestAnswer', JSON.stringify(answer));
+      localStorage.setItem(`guestAnswer_${this.invitationCode}`, JSON.stringify(answer));
       console.log('Guest created answer:', answer);
     } catch (error) {
       console.error('Failed to connect with offer:', error);
@@ -227,10 +228,12 @@ export class WebRTCManager {
     
     // Clean up localStorage
     try {
-      localStorage.removeItem('hostOffer');
-      localStorage.removeItem('guestAnswer');
-      localStorage.removeItem('hostCandidate');
-      localStorage.removeItem('guestCandidate');
+      if (this.invitationCode) {
+        localStorage.removeItem(`hostOffer_${this.invitationCode}`);
+        localStorage.removeItem(`guestAnswer_${this.invitationCode}`);
+        localStorage.removeItem(`hostCandidate_${this.invitationCode}`);
+        localStorage.removeItem(`guestCandidate_${this.invitationCode}`);
+      }
     } catch (error) {
       console.error('Failed to clean up localStorage:', error);
     }

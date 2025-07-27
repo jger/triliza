@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useGameState } from '../../hooks/useGameState';
 import { useMultiplayer } from '../../hooks/useMultiplayer';
@@ -12,11 +12,25 @@ import { GAME_CONFIG } from '../../constants/constants';
 
 const Game = () => {
   const [showMultiplayer, setShowMultiplayer] = useState(false);
-  const { gameMode, connectionStatus, invitationCode, error, createGame, joinGame, sendGameState, disconnect, copyInvitationLink } = useMultiplayer();
+  
+  // Create a ref to store the actions so we can use them in the callback
+  const actionsRef = useRef(null);
+  
+  const handleGameStateUpdate = useCallback((newGameState) => {
+    // Update the local game state with the received state from the other player
+    if (actionsRef.current) {
+      actionsRef.current.syncGameState(newGameState);
+    }
+  }, []);
+
+  const { gameMode, connectionStatus, invitationCode, error, createGame, joinGame, sendGameState, disconnect, copyInvitationLink } = useMultiplayer(handleGameStateUpdate);
   
   const { gameState, actions } = useGameState(
     gameMode !== 'local' ? sendGameState : null
   );
+  
+  // Update the actions ref when actions change
+  actionsRef.current = actions;
   
   const { cellSize, fontSize, containerWidth } = useResponsiveBoard(gameState.dimension);
 
@@ -38,11 +52,6 @@ const Game = () => {
           (gameMode === 'guest' && gameState.currentPlayer === 'O')))) {
       actions.makeMove(row, col);
     }
-  };
-
-  const handleGameStateUpdate = (newGameState) => {
-    // Update the local game state with the received state from the other player
-    actions.syncGameState(newGameState);
   };
 
   const handleToggleMultiplayer = () => {
@@ -69,7 +78,6 @@ const Game = () => {
         onJoinGame={joinGame}
         onDisconnect={disconnect}
         onCopyLink={copyInvitationLink}
-        onGameStateUpdate={handleGameStateUpdate}
         showMultiplayer={showMultiplayer}
         onToggleMultiplayer={handleToggleMultiplayer}
       />

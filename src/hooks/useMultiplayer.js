@@ -22,8 +22,10 @@ export const useMultiplayer = (onGameStateUpdate) => {
   }, []);
 
   const handleDataReceived = useCallback((data) => {
+    console.log('WebRTC data received:', data);
     if (data.type === 'gameState') {
       // Update the game state when receiving from other player
+      console.log('Updating game state from remote player:', data.payload);
       onGameStateUpdate?.(data.payload);
     }
   }, [onGameStateUpdate]);
@@ -42,27 +44,27 @@ export const useMultiplayer = (onGameStateUpdate) => {
       const code = webrtcRef.current.generateInvitationCode();
       setInvitationCode(code);
 
-      await webrtcRef.current.createConnection(true);
+      await webrtcRef.current.createConnection(true, code);
       
       // Start polling for guest connection
       signalCheckIntervalRef.current = setInterval(async () => {
         try {
           // Check for guest answer
-          const guestAnswer = localStorage.getItem('guestAnswer');
+          const guestAnswer = localStorage.getItem(`guestAnswer_${code}`);
           if (guestAnswer && webrtcRef.current) {
             console.log('Host found guest answer');
             const answer = JSON.parse(guestAnswer);
             await webrtcRef.current.connectWithAnswer(answer);
-            localStorage.removeItem('guestAnswer');
+            localStorage.removeItem(`guestAnswer_${code}`);
           }
 
           // Check for guest ICE candidates
-          const guestCandidate = localStorage.getItem('guestCandidate');
+          const guestCandidate = localStorage.getItem(`guestCandidate_${code}`);
           if (guestCandidate && webrtcRef.current) {
             console.log('Host found guest ICE candidate');
             const candidate = JSON.parse(guestCandidate);
             await webrtcRef.current.addIceCandidate(candidate);
-            localStorage.removeItem('guestCandidate');
+            localStorage.removeItem(`guestCandidate_${code}`);
           }
         } catch (error) {
           console.error('Error processing guest signals:', error);
@@ -88,27 +90,27 @@ export const useMultiplayer = (onGameStateUpdate) => {
       webrtcRef.current.onConnectionChange = handleConnectionChange;
       webrtcRef.current.onDataReceived = handleDataReceived;
 
-      await webrtcRef.current.createConnection(false);
+      await webrtcRef.current.createConnection(false, code);
 
       // Start polling for host connection
       signalCheckIntervalRef.current = setInterval(async () => {
         try {
           // Check for host offer
-          const hostOffer = localStorage.getItem('hostOffer');
+          const hostOffer = localStorage.getItem(`hostOffer_${code}`);
           if (hostOffer && webrtcRef.current) {
             console.log('Guest found host offer');
             const offer = JSON.parse(hostOffer);
             await webrtcRef.current.connectWithOffer(offer);
-            localStorage.removeItem('hostOffer');
+            localStorage.removeItem(`hostOffer_${code}`);
           }
 
           // Check for host ICE candidates
-          const hostCandidate = localStorage.getItem('hostCandidate');
+          const hostCandidate = localStorage.getItem(`hostCandidate_${code}`);
           if (hostCandidate && webrtcRef.current) {
             console.log('Guest found host ICE candidate');
             const candidate = JSON.parse(hostCandidate);
             await webrtcRef.current.addIceCandidate(candidate);
-            localStorage.removeItem('hostCandidate');
+            localStorage.removeItem(`hostCandidate_${code}`);
           }
         } catch (error) {
           console.error('Error processing host signals:', error);
@@ -123,11 +125,15 @@ export const useMultiplayer = (onGameStateUpdate) => {
   }, [handleConnectionChange, handleDataReceived]);
 
   const sendGameState = useCallback((gameState) => {
+    console.log('Attempting to send game state:', gameState, 'Connection status:', connectionStatus);
     if (webrtcRef.current && connectionStatus === 'connected') {
+      console.log('Sending game state via WebRTC:', gameState);
       webrtcRef.current.sendData({
         type: 'gameState',
         payload: gameState
       });
+    } else {
+      console.log('Cannot send game state - not connected');
     }
   }, [connectionStatus]);
 

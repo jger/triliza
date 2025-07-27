@@ -89,6 +89,7 @@ export const useGameState = (multiplayerSync = null) => {
   }, []);
 
   const syncGameState = useCallback((gameState) => {
+    console.log('Receiving game state update:', gameState);
     isUpdatingFromMultiplayerRef.current = true;
     dispatch({ type: 'SYNC_GAME_STATE', payload: gameState });
     isUpdatingFromMultiplayerRef.current = false;
@@ -100,6 +101,7 @@ export const useGameState = (multiplayerSync = null) => {
       // Only send if state has actually changed
       const stateString = JSON.stringify(state);
       if (lastSentStateRef.current !== stateString) {
+        console.log('Sending game state update:', state);
         lastSentStateRef.current = stateString;
         multiplayerSync(state);
       }
