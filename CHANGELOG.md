@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jger/triliza/compare/v1.0.4...v1.1.0) (2025-07-27)
+
+
+### Features
+
+* implement multiplayer functionality with WebRTC support and enhance game state management ([0559af8](https://github.com/jger/triliza/commit/0559af83554ea7738e27fa9706eec04cba9212df))
+
 ## [1.0.4](https://github.com/jger/triliza/compare/v1.0.3...v1.0.4) (2025-07-27)
 
 
