@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/jger/triliza/compare/v1.0.3...v1.0.4) (2025-07-27)
+
+
+### Bug Fixes
+
+* add automatic version display in the app and update release workflow ([5304a30](https://github.com/jger/triliza/commit/5304a303cef8ea646d00ad42aa9348cfce34d2cd))
+
 ## [1.0.3](https://github.com/jger/triliza/compare/v1.0.2...v1.0.3) (2025-07-27)
 
 
