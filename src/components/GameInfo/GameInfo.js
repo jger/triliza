@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native-web';
-import { GAME_STATUS, PLAYER } from '../../constants/constants';
-import { formatGameLog } from '../../utils/gameLogic';
+import { GAME_STATUS } from '../../constants/constants';
 
 const GameInfo = ({ 
   currentPlayer, 
@@ -9,28 +8,52 @@ const GameInfo = ({
   gameHistory, 
   scoreX, 
   scoreO, 
-  gameStatus 
+  gameStatus,
+  gameMode = 'local',
+  connectionStatus = 'disconnected'
 }) => {
-  const isGameOver = gameStatus === GAME_STATUS.GAME_OVER;
-  const gameLog = formatGameLog(gameHistory, isGameOver);
+  const getStatusText = () => {
+    if (gameStatus === GAME_STATUS.GAME_OVER) {
+      if (scoreX > scoreO) return 'Player X wins!';
+      if (scoreO > scoreX) return 'Player O wins!';
+      return 'It\'s a tie!';
+    }
+    
+    if (gameMode !== 'local') {
+      if (connectionStatus !== 'connected') {
+        return 'Connecting...';
+      }
+      return `Player ${currentPlayer}'s turn`;
+    }
+    
+    return `Player ${currentPlayer}'s turn`;
+  };
 
-  const getWinner = () => {
-    if (scoreX === scoreO) return 'Tie';
-    return scoreX > scoreO ? `${PLAYER.X} wins the game!` : `${PLAYER.O} wins the game!`;
+  const getPlayerLabel = () => {
+    if (gameMode === 'host') return 'You are X';
+    if (gameMode === 'guest') return 'You are O';
+    return '';
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.info}>Round: {currentPlayer}</Text>
-      <Text style={styles.info}>Moves: {moveCounter}</Text>
-      <Text style={styles.info}>Game notation: {gameLog}</Text>
-      <Text style={styles.info}>Score (X-O): {scoreX}-{scoreO}</Text>
+      <Text style={styles.statusText}>{getStatusText()}</Text>
       
-      {isGameOver && (
-        <View style={styles.gameOverContainer}>
-          <Text style={styles.winner}>{getWinner()}</Text>
-          <Text style={styles.gameOver}>Game Over!</Text>
-        </View>
+      {gameMode !== 'local' && (
+        <Text style={styles.playerLabel}>{getPlayerLabel()}</Text>
+      )}
+      
+      <View style={styles.scoreContainer}>
+        <Text style={styles.scoreText}>X: {scoreX}</Text>
+        <Text style={styles.scoreText}>O: {scoreO}</Text>
+      </View>
+      
+      <Text style={styles.moveText}>Moves: {moveCounter}</Text>
+      
+      {gameHistory.length > 0 && (
+        <Text style={styles.historyText}>
+          History: {gameHistory.join(', ')}
+        </Text>
       )}
     </View>
   );
@@ -38,30 +61,46 @@ const GameInfo = ({
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
     marginTop: 20,
-    paddingTop: 20,
-    borderTopWidth: 1,
-    borderTopColor: '#ccc',
-    alignItems: 'center',
+    padding: 15,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 8,
+    minWidth: 250,
   },
-  info: {
-    fontSize: 16,
-    marginBottom: 5,
-  },
-  gameOverContainer: {
-    alignItems: 'center',
-    marginTop: 15,
-  },
-  winner: {
+  statusText: {
     fontSize: 18,
-    marginBottom: 5,
     fontWeight: 'bold',
-    color: '#2e7d32',
+    marginBottom: 10,
+    textAlign: 'center',
+    color: '#333',
   },
-  gameOver: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#d32f2f',
+  playerLabel: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 10,
+    fontStyle: 'italic',
+  },
+  scoreContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginBottom: 10,
+  },
+  scoreText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333',
+  },
+  moveText: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 5,
+  },
+  historyText: {
+    fontSize: 12,
+    color: '#999',
+    textAlign: 'center',
   },
 });
 

@@ -1,4 +1,4 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer, useCallback, useEffect, useRef } from 'react';
 import { INITIAL_GAME_STATE, PLAYER, GAME_STATUS } from '../constants/constants';
 import { 
   createEmptyBoard, 
@@ -54,17 +54,27 @@ const gameReducer = (state, action) => {
         board: createEmptyBoard(newDimension),
       };
     }
+
+    case 'SYNC_GAME_STATE': {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    }
     
     default:
       return state;
   }
 };
 
-export const useGameState = () => {
+export const useGameState = (multiplayerSync = null) => {
   const [state, dispatch] = useReducer(gameReducer, {
     ...INITIAL_GAME_STATE,
     board: createEmptyBoard(INITIAL_GAME_STATE.dimension),
   });
+
+  const lastSentStateRef = useRef(null);
+  const isUpdatingFromMultiplayerRef = useRef(false);
 
   const makeMove = useCallback((row, col) => {
     dispatch({ type: 'MAKE_MOVE', payload: { row, col } });
@@ -78,12 +88,31 @@ export const useGameState = () => {
     dispatch({ type: 'CHANGE_DIMENSION', payload: { dimension } });
   }, []);
 
+  const syncGameState = useCallback((gameState) => {
+    isUpdatingFromMultiplayerRef.current = true;
+    dispatch({ type: 'SYNC_GAME_STATE', payload: gameState });
+    isUpdatingFromMultiplayerRef.current = false;
+  }, []);
+
+  // Sync game state changes to multiplayer (but avoid infinite loops)
+  useEffect(() => {
+    if (multiplayerSync && !isUpdatingFromMultiplayerRef.current) {
+      // Only send if state has actually changed
+      const stateString = JSON.stringify(state);
+      if (lastSentStateRef.current !== stateString) {
+        lastSentStateRef.current = stateString;
+        multiplayerSync(state);
+      }
+    }
+  }, [state, multiplayerSync]);
+
   return {
     gameState: state,
     actions: {
       makeMove,
       resetGame,
       changeDimension,
+      syncGameState,
     },
   };
 };

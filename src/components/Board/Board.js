@@ -5,7 +5,16 @@ import FloatingCursor from './FloatingCursor';
 import { GAME_STATUS } from '../../constants/constants';
 import { isCellEmpty } from '../../utils/gameLogic';
 
-const Board = ({ board, onCellPress, gameStatus, currentPlayer, cellSize, fontSize }) => {
+const Board = ({ 
+  board, 
+  onCellPress, 
+  gameStatus, 
+  currentPlayer, 
+  cellSize, 
+  fontSize,
+  disabled = false,
+  gameMode = 'local'
+}) => {
   const isGameOver = gameStatus === GAME_STATUS.GAME_OVER;
   const [mousePosition, setMousePosition] = useState(null);
   const [showFloatingCursor, setShowFloatingCursor] = useState(false);
@@ -18,14 +27,20 @@ const Board = ({ board, onCellPress, gameStatus, currentPlayer, cellSize, fontSi
   }, []);
 
   const handleMouseEnter = useCallback((cellValue) => {
-    if (!isGameOver && isCellEmpty(cellValue)) {
+    if (!isGameOver && !disabled && isCellEmpty(cellValue)) {
       setShowFloatingCursor(true);
     }
-  }, [isGameOver]);
+  }, [isGameOver, disabled]);
 
   const handleMouseLeave = useCallback(() => {
     setShowFloatingCursor(false);
   }, []);
+
+  const handleCellPress = (row, col) => {
+    if (!disabled && !isGameOver) {
+      onCellPress(row, col);
+    }
+  };
 
   return (
     <>
@@ -40,8 +55,8 @@ const Board = ({ board, onCellPress, gameStatus, currentPlayer, cellSize, fontSi
               <Cell
                 key={`cell-${rowIndex}-${colIndex}`}
                 value={cellValue}
-                onPress={() => onCellPress(rowIndex, colIndex)}
-                disabled={isGameOver}
+                onPress={() => handleCellPress(rowIndex, colIndex)}
+                disabled={isGameOver || disabled}
                 currentPlayer={currentPlayer}
                 onMouseEnter={() => handleMouseEnter(cellValue)}
                 cellSize={cellSize}

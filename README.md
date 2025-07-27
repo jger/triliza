@@ -12,6 +12,7 @@ A modern implementation of the classic Tic-Tac-Toe game built with React Native 
 
 - **Multi-dimensional gameplay** - Experience Tic-Tac-Toe in higher dimensions
 - **Two-player mode** - Play with friends locally
+- **Online multiplayer** - Play with friends over the internet (Beta)
 - **Responsive design** - Works perfectly on desktop and mobile devices
 - **Modern UI** - Clean, intuitive interface built with React
 - **Cross-platform** - Built with React Native Web for universal compatibility
