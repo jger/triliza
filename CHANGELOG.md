@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/jger/triliza/compare/v1.0.2...v1.0.3) (2025-07-27)
+
+
+### Bug Fixes
+
+* **ui:** enhance responsiveness of game board and cells with dynamic sizing ([dbf3299](https://github.com/jger/triliza/commit/dbf329990e03f39e29fd05c6d8ab6f8be246664c))
+* **ui:** prevent text selection in Cell component for improved user experience ([ffcf251](https://github.com/jger/triliza/commit/ffcf251661cec5fdca4c2334a1e3195a6eeaf199))
+* **ui:** show playing symbol right to mouse pointer ([c197e78](https://github.com/jger/triliza/commit/c197e788c5d5f464f80be145128a652f924a350a))
+
 ## [1.0.2](https://github.com/jger/triliza/compare/v1.0.1...v1.0.2) (2025-07-27)
 
 
