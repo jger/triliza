@@ -4,10 +4,20 @@ import { isCellEmpty } from '../../utils/gameLogic';
 import { GAME_CONFIG } from '../../constants/constants';
 import '../../styles/cursors.css';
 
-const Cell = ({ value, onPress, disabled = false, currentPlayer, onMouseEnter }) => {
+const Cell = ({ value, onPress, disabled = false, currentPlayer, onMouseEnter, cellSize, fontSize }) => {
   const isEmpty = isCellEmpty(value);
-  const cellStyle = isEmpty ? [styles.cell, styles.empty] : styles.cell;
-  const textStyle = isEmpty ? [styles.text, styles.emptyText] : styles.text;
+  
+  const dynamicCellStyle = {
+    ...styles.cell,
+    width: cellSize,
+    height: cellSize,
+    margin: GAME_CONFIG.CELL_MARGIN,
+  };
+  
+  const cellStyle = isEmpty ? [dynamicCellStyle, styles.empty] : dynamicCellStyle;
+  const textStyle = isEmpty 
+    ? [styles.text, styles.emptyText, { fontSize }] 
+    : [styles.text, { fontSize }];
 
   return (
     <Pressable 
@@ -26,16 +36,12 @@ const styles = StyleSheet.create({
   cell: {
     borderWidth: 1,
     borderColor: 'black',
-    width: GAME_CONFIG.CELL_SIZE,
-    height: GAME_CONFIG.CELL_SIZE,
-    margin: GAME_CONFIG.CELL_MARGIN,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ccc',
     cursor: 'pointer',
   },
   text: {
-    fontSize: 40,
     fontWeight: 'bold',
     userSelect: 'none',
     WebkitUserSelect: 'none',

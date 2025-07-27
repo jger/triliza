@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useGameState } from '../../hooks/useGameState';
+import { useResponsiveBoard } from '../../hooks/useResponsiveBoard';
 import Board from '../Board/Board';
 import GameInfo from '../GameInfo/GameInfo';
 import GameControls from './GameControls';
@@ -8,6 +9,7 @@ import { GAME_CONFIG } from '../../constants/constants';
 
 const Game = () => {
   const { gameState, actions } = useGameState();
+  const { cellSize, fontSize, containerWidth } = useResponsiveBoard(gameState.dimension);
 
   const handleDimensionDecrease = () => {
     if (gameState.dimension > GAME_CONFIG.MIN_DIMENSION) {
@@ -21,7 +23,8 @@ const Game = () => {
 
   const containerStyle = {
     ...styles.container,
-    width: gameState.dimension * 6 + 'em',
+    maxWidth: containerWidth,
+    width: '100%',
   };
 
   return (
@@ -38,6 +41,8 @@ const Game = () => {
         onCellPress={actions.makeMove}
         gameStatus={gameState.gameStatus}
         currentPlayer={gameState.currentPlayer}
+        cellSize={cellSize}
+        fontSize={fontSize}
       />
       
       <GameInfo
@@ -56,7 +61,9 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     margin: 'auto',
-    padding: 20,
+    padding: 10,
+    minHeight: '100vh',
+    justifyContent: 'center',
   },
 });
 

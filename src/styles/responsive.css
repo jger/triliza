@@ -1,0 +1,45 @@
+/* Global responsive styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  min-height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure game container is scrollable on small screens */
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+  
+  #root {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+}
+
+@media (max-height: 600px) {
+  #root {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+}
+
+/* Prevent horizontal scrolling on very small screens */
+@media (max-width: 320px) {
+  body {
+    padding: 2px;
+  }
+}

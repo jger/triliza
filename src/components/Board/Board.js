@@ -5,7 +5,7 @@ import FloatingCursor from './FloatingCursor';
 import { GAME_STATUS } from '../../constants/constants';
 import { isCellEmpty } from '../../utils/gameLogic';
 
-const Board = ({ board, onCellPress, gameStatus, currentPlayer }) => {
+const Board = ({ board, onCellPress, gameStatus, currentPlayer, cellSize, fontSize }) => {
   const isGameOver = gameStatus === GAME_STATUS.GAME_OVER;
   const [mousePosition, setMousePosition] = useState(null);
   const [showFloatingCursor, setShowFloatingCursor] = useState(false);
@@ -44,6 +44,8 @@ const Board = ({ board, onCellPress, gameStatus, currentPlayer }) => {
                 disabled={isGameOver}
                 currentPlayer={currentPlayer}
                 onMouseEnter={() => handleMouseEnter(cellValue)}
+                cellSize={cellSize}
+                fontSize={fontSize}
               />
             ))}
           </View>
