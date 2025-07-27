@@ -6,18 +6,28 @@ const MultiplayerControls = ({
   connectionStatus, 
   invitationCode, 
   error, 
+  connectionData,
+  waitingForAnswer,
   onCreateGame, 
   onJoinGame, 
   onDisconnect, 
-  onCopyLink,
+  onHandleAnswer,
+  onCopyConnectionData,
   showMultiplayer,
   onToggleMultiplayer
 }) => {
-  const [joinCode, setJoinCode] = useState('');
+  const [hostConnectionData, setHostConnectionData] = useState('');
+  const [guestAnswer, setGuestAnswer] = useState('');
 
   const handleJoinGame = () => {
-    if (joinCode.trim()) {
-      onJoinGame(joinCode.trim().toUpperCase());
+    if (hostConnectionData.trim()) {
+      onJoinGame(hostConnectionData.trim());
+    }
+  };
+
+  const handleProcessAnswer = () => {
+    if (guestAnswer.trim()) {
+      onHandleAnswer(guestAnswer.trim());
     }
   };
 
@@ -58,25 +68,25 @@ const MultiplayerControls = ({
             <Text style={styles.closeButtonText}>✕</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.betaWarning}>⚠️ Beta feature - may have connection issues</Text>
+        <Text style={styles.betaWarning}>⚠️ Beta feature - Cross-device manual connection</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={onCreateGame}>
-            <Text style={styles.buttonText}>Create Game</Text>
+            <Text style={styles.buttonText}>Host Game</Text>
           </TouchableOpacity>
           <Text style={styles.orText}>or</Text>
           <View style={styles.joinContainer}>
             <TextInput
-              style={styles.input}
-              placeholder="Enter invitation code"
-              value={joinCode}
-              onChangeText={setJoinCode}
-              maxLength={6}
-              autoCapitalize="characters"
+              style={styles.textArea}
+              placeholder="Paste host's connection data here..."
+              value={hostConnectionData}
+              onChangeText={setHostConnectionData}
+              multiline
+              numberOfLines={3}
             />
             <TouchableOpacity 
               style={[styles.button, styles.joinButton]} 
               onPress={handleJoinGame}
-              disabled={!joinCode.trim()}
+              disabled={!hostConnectionData.trim()}
             >
               <Text style={styles.buttonText}>Join Game</Text>
             </TouchableOpacity>
@@ -98,17 +108,67 @@ const MultiplayerControls = ({
         </View>
       </View>
 
-      {gameMode === 'host' && invitationCode && (
+      {gameMode === 'host' && connectionData && (
         <View style={styles.invitationContainer}>
-          <Text style={styles.invitationLabel}>Invitation Code:</Text>
-          <View style={styles.codeContainer}>
-            <Text style={styles.codeText}>{invitationCode}</Text>
-            <TouchableOpacity style={styles.copyButton} onPress={onCopyLink}>
-              <Text style={styles.copyButtonText}>Copy Link</Text>
+          <Text style={styles.invitationLabel}>Step 1: Share this connection data:</Text>
+          <View style={styles.dataContainer}>
+            <TextInput
+              style={styles.readOnlyTextArea}
+              value={connectionData}
+              multiline
+              numberOfLines={4}
+              editable={false}
+            />
+            <TouchableOpacity style={styles.copyButton} onPress={onCopyConnectionData}>
+              <Text style={styles.copyButtonText}>Copy</Text>
             </TouchableOpacity>
           </View>
           <Text style={styles.instructionText}>
-            Share this link with your friend to start playing
+            Send this data to your friend via message/email
+          </Text>
+          
+          {waitingForAnswer && (
+            <View style={styles.answerSection}>
+              <Text style={styles.invitationLabel}>Step 2: Paste your friend's response:</Text>
+              <View style={styles.dataContainer}>
+                <TextInput
+                  style={styles.textArea}
+                  placeholder="Paste your friend's connection response here..."
+                  value={guestAnswer}
+                  onChangeText={setGuestAnswer}
+                  multiline
+                  numberOfLines={3}
+                />
+                <TouchableOpacity 
+                  style={[styles.copyButton, styles.processButton]} 
+                  onPress={handleProcessAnswer}
+                  disabled={!guestAnswer.trim()}
+                >
+                  <Text style={styles.copyButtonText}>Connect</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          )}
+        </View>
+      )}
+
+      {gameMode === 'guest' && connectionData && (
+        <View style={styles.invitationContainer}>
+          <Text style={styles.invitationLabel}>Send this response to the host:</Text>
+          <View style={styles.dataContainer}>
+            <TextInput
+              style={styles.readOnlyTextArea}
+              value={connectionData}
+              multiline
+              numberOfLines={4}
+              editable={false}
+            />
+            <TouchableOpacity style={styles.copyButton} onPress={onCopyConnectionData}>
+              <Text style={styles.copyButtonText}>Copy</Text>
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.instructionText}>
+            Send this data back to the host to complete connection
           </Text>
         </View>
       )}
@@ -215,6 +275,45 @@ const styles = StyleSheet.create({
     minWidth: 120,
     textTransform: 'uppercase',
   },
+  textArea: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 6,
+    padding: 12,
+    fontSize: 12,
+    minHeight: 80,
+    textAlignVertical: 'top',
+    flex: 1,
+    marginRight: 10,
+    fontFamily: 'monospace',
+  },
+  readOnlyTextArea: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 6,
+    padding: 12,
+    fontSize: 12,
+    minHeight: 100,
+    textAlignVertical: 'top',
+    flex: 1,
+    marginRight: 10,
+    backgroundColor: '#f5f5f5',
+    fontFamily: 'monospace',
+  },
+  dataContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 10,
+  },
+  answerSection: {
+    marginTop: 15,
+    paddingTop: 15,
+    borderTopWidth: 1,
+    borderTopColor: '#ddd',
+  },
+  processButton: {
+    backgroundColor: '#4CAF50',
+  },
   joinButton: {
     backgroundColor: '#4CAF50',
   },
@@ -276,6 +375,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#666',
     textAlign: 'center',
+  },
+  warningText: {
+    fontSize: 11,
+    color: '#FF9800',
+    textAlign: 'center',
+    marginTop: 8,
+    fontStyle: 'italic',
   },
   errorContainer: {
     backgroundColor: '#ffebee',

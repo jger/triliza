@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { WebRTCManager, getInvitationCodeFromURL, createInvitationURL, copyToClipboard } from '../utils/webrtc';
+import { WebRTCManager, getInvitationCodeFromURL, copyToClipboard } from '../utils/webrtc';
 
 export const useMultiplayer = (onGameStateUpdate) => {
   const [gameMode, setGameMode] = useState('local');
@@ -7,6 +7,8 @@ export const useMultiplayer = (onGameStateUpdate) => {
   const [invitationCode, setInvitationCode] = useState('');
   const [isHost, setIsHost] = useState(false);
   const [error, setError] = useState('');
+  const [connectionData, setConnectionData] = useState('');
+  const [waitingForAnswer, setWaitingForAnswer] = useState(false);
   
   const webrtcRef = useRef(null);
   const signalCheckIntervalRef = useRef(null);
@@ -46,83 +48,85 @@ export const useMultiplayer = (onGameStateUpdate) => {
 
       await webrtcRef.current.createConnection(true, code);
       
-      // Start polling for guest connection
-      signalCheckIntervalRef.current = setInterval(async () => {
-        try {
-          // Check for guest answer
-          const guestAnswer = localStorage.getItem(`guestAnswer_${code}`);
-          if (guestAnswer && webrtcRef.current) {
-            console.log('Host found guest answer');
-            const answer = JSON.parse(guestAnswer);
-            await webrtcRef.current.connectWithAnswer(answer);
-            localStorage.removeItem(`guestAnswer_${code}`);
+      // Wait for ICE gathering to complete, then generate connection string
+      const waitForIceGathering = () => {
+        const checkInterval = setInterval(() => {
+          if (webrtcRef.current.iceGatheringComplete || webrtcRef.current.iceCandidates.length > 0) {
+            clearInterval(checkInterval);
+            const connectionString = webrtcRef.current.getConnectionString();
+            setConnectionData(connectionString);
+            setWaitingForAnswer(true);
+            console.log('Host connection data ready');
           }
-
-          // Check for guest ICE candidates
-          const guestCandidate = localStorage.getItem(`guestCandidate_${code}`);
-          if (guestCandidate && webrtcRef.current) {
-            console.log('Host found guest ICE candidate');
-            const candidate = JSON.parse(guestCandidate);
-            await webrtcRef.current.addIceCandidate(candidate);
-            localStorage.removeItem(`guestCandidate_${code}`);
+        }, 100);
+        
+        // Fallback after 5 seconds
+        setTimeout(() => {
+          clearInterval(checkInterval);
+          if (!connectionData) {
+            const connectionString = webrtcRef.current.getConnectionString();
+            setConnectionData(connectionString);
+            setWaitingForAnswer(true);
+            console.log('Host connection data ready (fallback)');
           }
-        } catch (error) {
-          console.error('Error processing guest signals:', error);
-        }
-      }, 1000);
+        }, 5000);
+      };
+      
+      waitForIceGathering();
 
     } catch (error) {
       console.error('Failed to create game:', error);
       setError('Failed to create game: ' + error.message);
       setConnectionStatus('error');
     }
-  }, [handleConnectionChange, handleDataReceived]);
+  }, [handleConnectionChange, handleDataReceived, connectionData]);
 
-  const joinGame = useCallback(async (code) => {
+  const joinGame = useCallback(async (hostConnectionString) => {
     try {
       setError('');
       setGameMode('guest');
       setIsHost(false);
       setConnectionStatus('connecting');
-      setInvitationCode(code);
 
       webrtcRef.current = new WebRTCManager();
       webrtcRef.current.onConnectionChange = handleConnectionChange;
       webrtcRef.current.onDataReceived = handleDataReceived;
 
-      await webrtcRef.current.createConnection(false, code);
-
-      // Start polling for host connection
-      signalCheckIntervalRef.current = setInterval(async () => {
-        try {
-          // Check for host offer
-          const hostOffer = localStorage.getItem(`hostOffer_${code}`);
-          if (hostOffer && webrtcRef.current) {
-            console.log('Guest found host offer');
-            const offer = JSON.parse(hostOffer);
-            await webrtcRef.current.connectWithOffer(offer);
-            localStorage.removeItem(`hostOffer_${code}`);
+      await webrtcRef.current.createConnection(false);
+      
+      // Handle host's connection data
+      await webrtcRef.current.handleConnectionString(hostConnectionString);
+      
+      // Wait for ICE gathering to complete, then generate answer
+      const waitForIceGathering = () => {
+        const checkInterval = setInterval(() => {
+          if (webrtcRef.current.iceGatheringComplete || webrtcRef.current.iceCandidates.length > 0) {
+            clearInterval(checkInterval);
+            const connectionString = webrtcRef.current.getConnectionString();
+            setConnectionData(connectionString);
+            console.log('Guest answer ready');
           }
-
-          // Check for host ICE candidates
-          const hostCandidate = localStorage.getItem(`hostCandidate_${code}`);
-          if (hostCandidate && webrtcRef.current) {
-            console.log('Guest found host ICE candidate');
-            const candidate = JSON.parse(hostCandidate);
-            await webrtcRef.current.addIceCandidate(candidate);
-            localStorage.removeItem(`hostCandidate_${code}`);
+        }, 100);
+        
+        // Fallback after 5 seconds
+        setTimeout(() => {
+          clearInterval(checkInterval);
+          if (!connectionData) {
+            const connectionString = webrtcRef.current.getConnectionString();
+            setConnectionData(connectionString);
+            console.log('Guest answer ready (fallback)');
           }
-        } catch (error) {
-          console.error('Error processing host signals:', error);
-        }
-      }, 1000);
+        }, 5000);
+      };
+      
+      waitForIceGathering();
 
     } catch (error) {
       console.error('Failed to join game:', error);
       setError('Failed to join game: ' + error.message);
       setConnectionStatus('error');
     }
-  }, [handleConnectionChange, handleDataReceived]);
+  }, [handleConnectionChange, handleDataReceived, connectionData]);
 
   const sendGameState = useCallback((gameState) => {
     console.log('Attempting to send game state:', gameState, 'Connection status:', connectionStatus);
@@ -156,12 +160,24 @@ export const useMultiplayer = (onGameStateUpdate) => {
     setError('');
   }, []);
 
-  const copyInvitationLink = useCallback(async () => {
-    if (invitationCode) {
-      const invitationURL = createInvitationURL(invitationCode);
-      await copyToClipboard(invitationURL);
+  const handleAnswer = useCallback(async (answerString) => {
+    try {
+      if (webrtcRef.current && isHost) {
+        await webrtcRef.current.handleConnectionString(answerString);
+        setWaitingForAnswer(false);
+        console.log('Host processed guest answer');
+      }
+    } catch (error) {
+      console.error('Failed to handle answer:', error);
+      setError('Failed to process connection data: ' + error.message);
     }
-  }, [invitationCode]);
+  }, [isHost]);
+
+  const copyConnectionData = useCallback(async () => {
+    if (connectionData) {
+      await copyToClipboard(connectionData);
+    }
+  }, [connectionData]);
 
   // Check for invitation code in URL on mount
   useEffect(() => {
@@ -190,10 +206,13 @@ export const useMultiplayer = (onGameStateUpdate) => {
     invitationCode,
     isHost,
     error,
+    connectionData,
+    waitingForAnswer,
     createGame,
     joinGame,
     sendGameState,
     disconnect,
-    copyInvitationLink
+    handleAnswer,
+    copyConnectionData
   };
 }; 

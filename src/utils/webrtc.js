@@ -31,6 +31,7 @@ export class WebRTCManager {
       });
 
       this.setupEventListeners();
+      this.iceCandidates = [];
 
       if (isHost) {
         // Host creates data channel
@@ -43,8 +44,8 @@ export class WebRTCManager {
         const offer = await this.peerConnection.createOffer();
         await this.peerConnection.setLocalDescription(offer);
         
-        // Store offer for guest to pick up with invitation code as key
-        localStorage.setItem(`hostOffer_${this.invitationCode}`, JSON.stringify(offer));
+        // Store offer for manual sharing
+        this.localOffer = offer;
         console.log('Host created offer:', offer);
       } else {
         // Guest waits for offer
@@ -77,10 +78,12 @@ export class WebRTCManager {
     if (!this.peerConnection) return;
 
     this.peerConnection.onicecandidate = (event) => {
-      if (event.candidate && this.invitationCode) {
-        const candidateKey = this.isHost ? `hostCandidate_${this.invitationCode}` : `guestCandidate_${this.invitationCode}`;
-        localStorage.setItem(candidateKey, JSON.stringify(event.candidate));
-        console.log('ICE candidate stored:', candidateKey);
+      if (event.candidate) {
+        console.log('New ICE candidate:', event.candidate);
+        this.iceCandidates.push(event.candidate);
+      } else {
+        console.log('ICE gathering complete');
+        this.iceGatheringComplete = true;
       }
     };
 
@@ -242,6 +245,70 @@ export class WebRTCManager {
   getConnectionStatus() {
     return this.connectionStatus;
   }
+
+  getConnectionData() {
+    if (this.isHost && this.localOffer) {
+      return {
+        type: 'offer',
+        sdp: this.localOffer,
+        candidates: this.iceCandidates
+      };
+    } else if (!this.isHost && this.localAnswer) {
+      return {
+        type: 'answer',
+        sdp: this.localAnswer,
+        candidates: this.iceCandidates
+      };
+    }
+    return null;
+  }
+
+  getConnectionString() {
+    const data = this.getConnectionData();
+    if (data) {
+      return btoa(JSON.stringify(data));
+    }
+    return null;
+  }
+
+  async handleConnectionString(connectionString) {
+    try {
+      const data = JSON.parse(atob(connectionString));
+      console.log('Handling connection data:', data);
+
+      if (data.type === 'offer' && !this.isHost) {
+        // Guest handles host's offer
+        await this.peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
+        
+        // Add ICE candidates
+        for (const candidate of data.candidates) {
+          await this.peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+        }
+        
+        // Create answer
+        const answer = await this.peerConnection.createAnswer();
+        await this.peerConnection.setLocalDescription(answer);
+        this.localAnswer = answer;
+        
+        console.log('Guest created answer');
+        
+      } else if (data.type === 'answer' && this.isHost) {
+        // Host handles guest's answer
+        await this.peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
+        
+        // Add ICE candidates
+        for (const candidate of data.candidates) {
+          await this.peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
+        }
+        
+        console.log('Host processed answer');
+      }
+      
+    } catch (error) {
+      console.error('Failed to handle connection string:', error);
+      throw error;
+    }
+  }
 }
 
 export const getInvitationCodeFromURL = () => {
@@ -254,10 +321,23 @@ export const getInvitationCodeFromURL = () => {
   }
 };
 
-export const createInvitationURL = (code) => {
+export const getOfferFromURL = () => {
   try {
-    const currentURL = new URL(window.location.href);
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('offer');
+  } catch (error) {
+    console.error('Failed to get offer from URL:', error);
+    return null;
+  }
+};
+
+export const createInvitationURL = (code, encodedOffer = null) => {
+  try {
+    const currentURL = new URL(window.location.origin + window.location.pathname);
     currentURL.searchParams.set('code', code);
+    if (encodedOffer) {
+      currentURL.searchParams.set('offer', encodedOffer);
+    }
     return currentURL.toString();
   } catch (error) {
     console.error('Failed to create invitation URL:', error);
