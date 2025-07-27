@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/jger/triliza/compare/v1.1.0...v1.1.1) (2025-07-27)
+
+
+### Bug Fixes
+
+* add game rules documentation and integrate rules modal in the game interface ([de3b95c](https://github.com/jger/triliza/commit/de3b95c8a9a4164ade7c269bcd920eed418395d0))
+* enhance multiplayer game state management with WebRTC integration ([56a7b37](https://github.com/jger/triliza/commit/56a7b379e1a24ac2f641bbe8a4bf1f9fd303b74f))
+
 # [1.1.0](https://github.com/jger/triliza/compare/v1.0.4...v1.1.0) (2025-07-27)
 
 
