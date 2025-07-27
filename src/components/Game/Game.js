@@ -37,6 +37,7 @@ const Game = () => {
         board={gameState.board}
         onCellPress={actions.makeMove}
         gameStatus={gameState.gameStatus}
+        currentPlayer={gameState.currentPlayer}
       />
       
       <GameInfo
