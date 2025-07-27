@@ -44,5 +44,13 @@
   },
   "overrides": {
     "nth-check": "^2.1.1"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(nanoid)/)"
+    ],
+    "moduleNameMapper": {
+      "^nanoid$": "<rootDir>/node_modules/nanoid/index.browser.js"
+    }
   }
 }
