@@ -92,15 +92,14 @@ const Game = () => {
         showMultiplayer={showMultiplayer}
         onToggleMultiplayer={handleToggleMultiplayer}
       />
-      
-      {gameMode === 'local' && (
+      {gameMode === 'local' ? (
         <GameControls
           dimension={gameState.dimension}
           onDecrease={handleDimensionDecrease}
           onIncrease={handleDimensionIncrease}
           onNewGame={actions.resetGame}
         />
-      )}
+      ) : null}
       <RulesButton onPress={handleToggleRules} />
       <Board
         board={gameState.board}
@@ -112,7 +111,6 @@ const Game = () => {
         disabled={gameMode !== 'local' && connectionStatus !== 'connected'}
         gameMode={gameMode}
       />
-      
       <GameInfo
         currentPlayer={gameState.currentPlayer}
         moveCounter={gameState.moveCounter}
@@ -123,11 +121,10 @@ const Game = () => {
         gameMode={gameMode}
         connectionStatus={connectionStatus}
       />
-      
       <Version />
-      
-      
-      <Rules isVisible={showRules} onClose={handleToggleRules} />
+      {showRules ? (
+        <Rules isVisible={showRules} onClose={handleToggleRules} />
+      ) : null}
     </View>
   );
 };

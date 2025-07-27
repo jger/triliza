@@ -39,9 +39,9 @@ const GameInfo = ({
     <View style={styles.container}>
       <Text style={styles.statusText}>{getStatusText()}</Text>
       
-      {gameMode !== 'local' && (
+      {gameMode !== 'local' ? (
         <Text style={styles.playerLabel}>{getPlayerLabel()}</Text>
-      )}
+      ) : null}
       
       <View style={styles.scoreContainer}>
         <Text style={styles.scoreText}>X: {scoreX}</Text>
@@ -50,11 +50,11 @@ const GameInfo = ({
       
       <Text style={styles.moveText}>Moves: {moveCounter}</Text>
       
-      {gameHistory.length > 0 && (
+      {gameHistory.length > 0 ? (
         <Text style={styles.historyText}>
           History: {gameHistory.join(', ')}
         </Text>
-      )}
+      ) : null}
     </View>
   );
 };

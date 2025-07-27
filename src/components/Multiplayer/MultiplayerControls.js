@@ -112,13 +112,13 @@ const MultiplayerControls = ({
         <View style={styles.statusContainer}>
           <View style={[styles.statusDot, { backgroundColor: getStatusColor() }]} />
           <Text style={styles.statusText}>{getStatusText()}</Text>
-          {connectionStatus === 'connecting' && timeRemaining > 0 && (
+          {connectionStatus === 'connecting' && timeRemaining > 0 ? (
             <Text style={styles.timerText}>{formatTime(timeRemaining)}</Text>
-          )}
+          ) : null}
         </View>
       </View>
 
-      {gameMode === 'host' && connectionData && (
+      {gameMode === 'host' && connectionData ? (
         <View style={styles.invitationContainer}>
           <Text style={styles.invitationLabel}>Step 1: Share this connection data:</Text>
           <View style={styles.dataContainer}>
@@ -137,7 +137,7 @@ const MultiplayerControls = ({
             Send this data to your friend via message/email
           </Text>
           
-          {waitingForAnswer && (
+          {waitingForAnswer ? (
             <View style={styles.answerSection}>
               <Text style={styles.invitationLabel}>Step 2: Paste your friend's response:</Text>
               <View style={styles.dataContainer}>
@@ -158,11 +158,11 @@ const MultiplayerControls = ({
                 </TouchableOpacity>
               </View>
             </View>
-          )}
+          ) : null}
         </View>
-      )}
+      ) : null}
 
-      {gameMode === 'guest' && connectionData && (
+      {gameMode === 'guest' && connectionData ? (
         <View style={styles.invitationContainer}>
           <Text style={styles.invitationLabel}>Send this response to the host:</Text>
           <View style={styles.dataContainer}>
@@ -181,13 +181,13 @@ const MultiplayerControls = ({
             Send this data back to the host to complete connection
           </Text>
         </View>
-      )}
+      ) : null}
 
-      {error && (
+      {error ? (
         <View style={styles.errorContainer}>
-          <Text style={styles.errorText}>{error}</Text>
-        </View>
-      )}
+                  <Text style={styles.errorText}>{error}</Text>
+      </View>
+    ) : null}
 
       <TouchableOpacity style={styles.disconnectButton} onPress={onDisconnect}>
         <Text style={styles.disconnectButtonText}>Back to Local Game</Text>
