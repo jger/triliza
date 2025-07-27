@@ -8,10 +8,13 @@ import GameInfo from '../GameInfo/GameInfo';
 import GameControls from './GameControls';
 import MultiplayerControls from '../Multiplayer/MultiplayerControls';
 import Version from '../Version/Version';
+import Rules from '../Rules/Rules';
+import RulesButton from '../Rules/RulesButton';
 import { GAME_CONFIG } from '../../constants/constants';
 
 const Game = () => {
   const [showMultiplayer, setShowMultiplayer] = useState(false);
+  const [showRules, setShowRules] = useState(false);
   
   // Create a ref to store the actions so we can use them in the callback
   const actionsRef = useRef(null);
@@ -61,6 +64,10 @@ const Game = () => {
     setShowMultiplayer(!showMultiplayer);
   };
 
+  const handleToggleRules = () => {
+    setShowRules(!showRules);
+  };
+
   const containerStyle = {
     ...styles.container,
     maxWidth: containerWidth,
@@ -90,7 +97,7 @@ const Game = () => {
           onNewGame={actions.resetGame}
         />
       )}
-      
+      <RulesButton onPress={handleToggleRules} />
       <Board
         board={gameState.board}
         onCellPress={handleMakeMove}
@@ -114,6 +121,9 @@ const Game = () => {
       />
       
       <Version />
+      
+      
+      <Rules isVisible={showRules} onClose={handleToggleRules} />
     </View>
   );
 };

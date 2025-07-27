@@ -8,6 +8,10 @@ A modern implementation of the classic Tic-Tac-Toe game built with React Native 
 
 **[Play Triliza Now](https://jger.github.io/triliza/)** - Free online multiplayer game
 
+## 📖 Game Rules
+
+**[Read the Rules](RULES.md)** - Learn how to play Triliza
+
 ## ✨ Features
 
 - **Multi-dimensional gameplay** - Experience Tic-Tac-Toe in higher dimensions
