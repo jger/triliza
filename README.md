@@ -55,11 +55,13 @@ npm run build
 
 ## Deployment
 
-The app automatically deploys to GitHub Pages when you push to the main branch. The deployment process:
+The app automatically deploys to GitHub Pages when you push to the master branch. The deployment process:
 
 1. **Semantic Release**: Automatically determines version based on commit messages
 2. **Build**: Creates production build with version injected
 3. **Deploy**: Publishes to GitHub Pages
+
+**Note**: Make sure to push to the `master` branch for automatic releases.
 
 ### Commit Message Format
 

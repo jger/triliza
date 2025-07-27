@@ -3,7 +3,7 @@ name: Release and Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   release:
@@ -15,6 +15,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
