@@ -99,7 +99,7 @@ const Game = () => {
         gameStatus={gameState.gameStatus}
         onNewGame={gameMode !== 'local' ? actions.resetGame : null}
       />
-      {gameMode === 'local' ? (
+      {(gameMode === 'local' || (gameMode !== 'local' && connectionStatus !== 'connected') || (gameMode !== 'local' && connectionStatus === 'connected' && gameState.moveCounter === 0)) ? (
         <GameControls
           dimension={gameState.dimension}
           onDecrease={handleDimensionDecrease}
