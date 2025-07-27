@@ -26,7 +26,7 @@ const Game = () => {
     }
   }, []);
 
-  const { gameMode, connectionStatus, invitationCode, error, connectionData, waitingForAnswer, createGame, joinGame, sendGameState, disconnect, handleAnswer, copyConnectionData } = useMultiplayer(handleGameStateUpdate);
+  const { gameMode, connectionStatus, invitationCode, error, connectionData, waitingForAnswer, timeRemaining, createGame, joinGame, sendGameState, disconnect, handleAnswer, copyConnectionData } = useMultiplayer(handleGameStateUpdate);
   
   const { gameState, actions } = useGameState(
     gameMode !== 'local' ? sendGameState : null
@@ -83,6 +83,7 @@ const Game = () => {
         error={error}
         connectionData={connectionData}
         waitingForAnswer={waitingForAnswer}
+        timeRemaining={timeRemaining}
         onCreateGame={createGame}
         onJoinGame={joinGame}
         onDisconnect={disconnect}

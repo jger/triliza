@@ -9,6 +9,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
   const [error, setError] = useState('');
   const [connectionData, setConnectionData] = useState('');
   const [waitingForAnswer, setWaitingForAnswer] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(0);
   
   const webrtcRef = useRef(null);
   const signalCheckIntervalRef = useRef(null);
@@ -32,6 +33,10 @@ export const useMultiplayer = (onGameStateUpdate) => {
     }
   }, [onGameStateUpdate]);
 
+  const handleTimerUpdate = useCallback((time) => {
+    setTimeRemaining(time);
+  }, []);
+
   const createGame = useCallback(async () => {
     try {
       setError('');
@@ -42,6 +47,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
       webrtcRef.current = new WebRTCManager();
       webrtcRef.current.onConnectionChange = handleConnectionChange;
       webrtcRef.current.onDataReceived = handleDataReceived;
+      webrtcRef.current.onTimerUpdate = handleTimerUpdate;
 
       const code = webrtcRef.current.generateInvitationCode();
       setInvitationCode(code);
@@ -91,6 +97,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
       webrtcRef.current = new WebRTCManager();
       webrtcRef.current.onConnectionChange = handleConnectionChange;
       webrtcRef.current.onDataReceived = handleDataReceived;
+      webrtcRef.current.onTimerUpdate = handleTimerUpdate;
 
       await webrtcRef.current.createConnection(false);
       
@@ -158,6 +165,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
     setInvitationCode('');
     setIsHost(false);
     setError('');
+    setTimeRemaining(0);
   }, []);
 
   const handleAnswer = useCallback(async (answerString) => {
@@ -208,6 +216,7 @@ export const useMultiplayer = (onGameStateUpdate) => {
     error,
     connectionData,
     waitingForAnswer,
+    timeRemaining,
     createGame,
     joinGame,
     sendGameState,

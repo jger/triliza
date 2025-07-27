@@ -8,6 +8,7 @@ const MultiplayerControls = ({
   error, 
   connectionData,
   waitingForAnswer,
+  timeRemaining,
   onCreateGame, 
   onJoinGame, 
   onDisconnect, 
@@ -47,6 +48,12 @@ const MultiplayerControls = ({
       case 'error': return 'Connection Error';
       default: return 'Disconnected';
     }
+  };
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
   if (gameMode === 'local' && !showMultiplayer) {
@@ -105,6 +112,9 @@ const MultiplayerControls = ({
         <View style={styles.statusContainer}>
           <View style={[styles.statusDot, { backgroundColor: getStatusColor() }]} />
           <Text style={styles.statusText}>{getStatusText()}</Text>
+          {connectionStatus === 'connecting' && timeRemaining > 0 && (
+            <Text style={styles.timerText}>{formatTime(timeRemaining)}</Text>
+          )}
         </View>
       </View>
 
@@ -336,6 +346,12 @@ const styles = StyleSheet.create({
   statusText: {
     fontSize: 14,
     color: '#666',
+  },
+  timerText: {
+    fontSize: 12,
+    color: '#FF9800',
+    fontWeight: 'bold',
+    marginLeft: 8,
   },
   invitationContainer: {
     backgroundColor: 'white',

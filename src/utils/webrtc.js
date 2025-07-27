@@ -9,6 +9,9 @@ export class WebRTCManager {
     this.onConnectionChange = null;
     this.isHost = false;
     this.connectionTimeout = null;
+    this.connectionTimer = null;
+    this.timeRemaining = 0;
+    this.onTimerUpdate = null;
   }
 
   generateInvitationCode() {
@@ -56,12 +59,16 @@ export class WebRTCManager {
         };
       }
 
-      // Set connection timeout
+      // Set connection timeout and timer
+      this.timeRemaining = 300; // 5 minutes in seconds
+      this.startTimer();
+      
       this.connectionTimeout = setTimeout(() => {
         if (this.connectionStatus === 'connecting') {
           console.log('Connection timeout');
           this.connectionStatus = 'error';
           this.onConnectionChange?.('error');
+          this.stopTimer();
         }
       }, 300000); // 5 minutes timeout
 
@@ -96,6 +103,7 @@ export class WebRTCManager {
           clearTimeout(this.connectionTimeout);
           this.connectionTimeout = null;
         }
+        this.stopTimer();
         this.connectionStatus = 'connected';
         this.onConnectionChange?.('connected');
       } else if (state === 'failed' || state === 'disconnected') {
@@ -103,6 +111,7 @@ export class WebRTCManager {
           clearTimeout(this.connectionTimeout);
           this.connectionTimeout = null;
         }
+        this.stopTimer();
         this.connectionStatus = 'error';
         this.onConnectionChange?.('error');
       }
@@ -121,6 +130,7 @@ export class WebRTCManager {
         clearTimeout(this.connectionTimeout);
         this.connectionTimeout = null;
       }
+      this.stopTimer();
       this.connectionStatus = 'connected';
       this.onConnectionChange?.('connected');
     };
@@ -210,11 +220,36 @@ export class WebRTCManager {
     }
   }
 
+  startTimer() {
+    this.stopTimer();
+    this.connectionTimer = setInterval(() => {
+      this.timeRemaining--;
+      this.onTimerUpdate?.(this.timeRemaining);
+      
+      if (this.timeRemaining <= 0) {
+        this.stopTimer();
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.connectionTimer) {
+      clearInterval(this.connectionTimer);
+      this.connectionTimer = null;
+    }
+  }
+
+  getTimeRemaining() {
+    return this.timeRemaining;
+  }
+
   disconnect() {
     if (this.connectionTimeout) {
       clearTimeout(this.connectionTimeout);
       this.connectionTimeout = null;
     }
+
+    this.stopTimer();
 
     if (this.dataChannel) {
       this.dataChannel.close();
