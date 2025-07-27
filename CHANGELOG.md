@@ -1,3 +1,14 @@
+## [1.1.3](https://github.com/jger/triliza/compare/v1.1.2...v1.1.3) (2025-07-27)
+
+
+### Bug Fixes
+
+* add connection timer to multiplayer game for improved user experience ([4e3df0c](https://github.com/jger/triliza/commit/4e3df0cb6e259b51c5698ee466ab3997b55826f5))
+* implement disconnect functionality and new game option in multiplayer controls ([3cf8e5d](https://github.com/jger/triliza/commit/3cf8e5dfc9b2dee8125d68a68d42056f9a8c9c2a))
+* implement game end handling and player stats update in multiplayer mode ([987f782](https://github.com/jger/triliza/commit/987f78256de636926d75743b1052c76248ec1b30))
+* include handleTimerUpdate in multiplayer hooks for improved game state management ([2d2ef48](https://github.com/jger/triliza/commit/2d2ef4885fa801a669741881b60ae00100b33322))
+* increase WebRTC connection timeout from 30 seconds to 5 minutes ([d1b5513](https://github.com/jger/triliza/commit/d1b551379f55198530aa82177febc084e9c18063))
+
 ## [1.1.2](https://github.com/jger/triliza/compare/v1.1.1...v1.1.2) (2025-07-27)
 
 
