@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native-web';
-import { GAME_CONFIG } from '../../utils/constants';
+import { GAME_CONFIG } from '../../constants/constants';
 
 const GameControls = ({ dimension, onDecrease, onIncrease, onNewGame }) => {
   const canDecrease = dimension > GAME_CONFIG.MIN_DIMENSION;

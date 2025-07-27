@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Cell from '../Cell/Cell';
-import { GAME_STATUS } from '../../utils/constants';
+import { GAME_STATUS } from '../../constants/constants';
 
 const Board = ({ board, onCellPress, gameStatus }) => {
   const isGameOver = gameStatus === GAME_STATUS.GAME_OVER;

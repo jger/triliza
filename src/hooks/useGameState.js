@@ -1,5 +1,5 @@
 import { useReducer, useCallback } from 'react';
-import { INITIAL_GAME_STATE, PLAYER, GAME_STATUS } from '../utils/constants';
+import { INITIAL_GAME_STATE, PLAYER, GAME_STATUS } from '../constants/constants';
 import { 
   createEmptyBoard, 
   isCellEmpty, 

@@ -4,7 +4,7 @@ import { useGameState } from '../../hooks/useGameState';
 import Board from '../Board/Board';
 import GameInfo from '../GameInfo/GameInfo';
 import GameControls from './GameControls';
-import { GAME_CONFIG } from '../../utils/constants';
+import { GAME_CONFIG } from '../../constants/constants';
 
 const Game = () => {
   const { gameState, actions } = useGameState();

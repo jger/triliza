@@ -1,4 +1,4 @@
-import { PLAYER } from './constants';
+import { PLAYER } from '../constants/constants';
 
 export const createEmptyBoard = (dimension) => {
   const board = [];

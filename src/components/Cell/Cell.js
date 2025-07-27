@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, Pressable } from 'react-native-web';
 import { isCellEmpty } from '../../utils/gameLogic';
-import { GAME_CONFIG } from '../../utils/constants';
+import { GAME_CONFIG } from '../../constants/constants';
 
 const Cell = ({ value, onPress, disabled = false }) => {
   const isEmpty = isCellEmpty(value);

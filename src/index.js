@@ -1,5 +1,6 @@
 import { AppRegistry } from 'react-native-web';
 import App from './App';
+import './styles/index.css';
 import * as serviceWorker from './serviceWorker';
 
 AppRegistry.registerComponent('triliza', () => App);

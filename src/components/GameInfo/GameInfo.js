@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native-web';
-import { GAME_STATUS, PLAYER } from '../../utils/constants';
+import { GAME_STATUS, PLAYER } from '../../constants/constants';
 import { formatGameLog } from '../../utils/gameLogic';
 
 const GameInfo = ({ 
