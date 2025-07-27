@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/jger/triliza/compare/v1.1.1...v1.1.2) (2025-07-27)
+
+
+### Bug Fixes
+
+* enhance multiplayer connection handling with new data sharing features ([65b4a0f](https://github.com/jger/triliza/commit/65b4a0f25b8be85478502feffd50543782ccd9c7))
+
 ## [1.1.1](https://github.com/jger/triliza/compare/v1.1.0...v1.1.1) (2025-07-27)
 
 
