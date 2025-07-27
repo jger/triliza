@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/triliza/static/js/main.7ee9dc51.js",
+    "main.css": "/triliza/static/css/main.66dc62a8.css",
+    "main.js": "/triliza/static/js/main.f7cbee9e.js",
     "index.html": "/triliza/index.html",
-    "main.7ee9dc51.js.map": "/triliza/static/js/main.7ee9dc51.js.map"
+    "main.66dc62a8.css.map": "/triliza/static/css/main.66dc62a8.css.map",
+    "main.f7cbee9e.js.map": "/triliza/static/js/main.f7cbee9e.js.map"
   },
   "entrypoints": [
-    "static/js/main.7ee9dc51.js"
+    "static/css/main.66dc62a8.css",
+    "static/js/main.f7cbee9e.js"
   ]
 }
