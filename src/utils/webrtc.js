@@ -63,7 +63,7 @@ export class WebRTCManager {
           this.connectionStatus = 'error';
           this.onConnectionChange?.('error');
         }
-      }, 30000); // 30 seconds timeout
+      }, 300000); // 5 minutes timeout
 
       return this.peerConnection;
     } catch (error) {
