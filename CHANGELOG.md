@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/jger/triliza/compare/v1.1.3...v1.1.4) (2025-11-16)
+
+
+### Bug Fixes
+
+* add dev notes and upgrade js-yaml to version 4.1.1 for security fix (CVE-2025-64718) ([d395374](https://github.com/jger/triliza/commit/d3953745d31f8666be7c806dfdcd53445501da91))
+
 ## [1.1.3](https://github.com/jger/triliza/compare/v1.1.2...v1.1.3) (2025-07-27)
 
 
