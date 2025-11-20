@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/jger/triliza/compare/v1.1.4...v1.1.5) (2025-11-20)
+
+
+### Bug Fixes
+
+* upgrade dependencies for security and functionality improvements ([7d742fc](https://github.com/jger/triliza/commit/7d742fc849d3bca6cfd6bef1f7ea0a228fe55b35))
+
 ## [1.1.4](https://github.com/jger/triliza/compare/v1.1.3...v1.1.4) (2025-11-16)
 
 
