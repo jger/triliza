@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "https://jger.github.io/triliza",
   "dependencies": {
+    "nanoid": "^5.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-native-web": "^0.21.0",
-    "react-scripts": "^5.0.1",
-    "nanoid": "^5.0.4"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,7 +17,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "postinstall": "patch-package"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,11 +36,12 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.3",
     "@semantic-release/npm": "^12.0.2",
+    "gh-pages": "^6.3.0",
+    "patch-package": "^8.0.1",
     "semantic-release": "^24.2.7"
   },
   "overrides": {

@@ -7,3 +7,6 @@
 - Note: Remaining glob vulnerabilities are in dev dependencies (npm bundled in semantic-release packages). These don't affect production builds. Waiting for npm/semantic-release to update bundled glob.
 - GitHub Pages deployment updated with security fixes
 
+## Testing
+- Added patch-package hook to shim glob’s CJS export for test-exclude/babel-plugin-istanbul so `npm test -- --watchAll=false --coverage --passWithNoTests` works on Node 24.
+
