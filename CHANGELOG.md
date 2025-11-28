@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/jger/triliza/compare/v1.1.6...v1.1.7) (2025-11-28)
+
+
+### Bug Fixes
+
+* update dependencies in package.json and package-lock.json to latest versions, including semantic-release to 25.0.2 and @semantic-release/npm to 13.1.2; adjust Node.js version in GitHub Actions workflow to 22 ([16b675b](https://github.com/jger/triliza/commit/16b675bf44b7eddc77d1682b4fb6cce75f1fffd0))
+
 ## [1.1.6](https://github.com/jger/triliza/compare/v1.1.5...v1.1.6) (2025-11-28)
 
 
