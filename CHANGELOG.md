@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/jger/triliza/compare/v1.1.5...v1.1.6) (2025-11-28)
+
+
+### Bug Fixes
+
+* update node-forge to version 1.3.2 and add hasInstallScript to package-lock.json ([f3f96cf](https://github.com/jger/triliza/commit/f3f96cf58588461c394e459b3fad72aab7dda8f9))
+
 ## [1.1.5](https://github.com/jger/triliza/compare/v1.1.4...v1.1.5) (2025-11-20)
 
 
