@@ -51,6 +51,12 @@
     "js-yaml": "^4.1.1",
     "glob": "^11.1.0",
     "node-forge": "^1.3.2",
+    "selfsigned": {
+      "node-forge": "^1.3.2"
+    },
+    "sucrase": {
+      "glob": "^11.1.0"
+    },
     "npm": {
       "glob": "^11.1.0"
     },
@@ -58,6 +64,15 @@
       "npm": {
         "glob": "^11.1.0"
       }
+    },
+    "@npmcli/package-json": {
+      "glob": "^11.1.0"
+    },
+    "@npmcli/map-workspaces": {
+      "glob": "^11.1.0"
+    },
+    "cacache": {
+      "glob": "^11.1.0"
     }
   },
   "jest": {
