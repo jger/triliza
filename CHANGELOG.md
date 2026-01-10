@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/jger/triliza/compare/v1.1.7...v1.1.8) (2025-12-13)
+
+
+### Bug Fixes
+
+* update react and react-dom to version 19.2.3, and node-forge to version 1.3.3 in package.json and package-lock.json ([cc90f50](https://github.com/jger/triliza/commit/cc90f50f5e042d8ff013bc6e3a6f31c5bd37cc65))
+
 ## [1.1.7](https://github.com/jger/triliza/compare/v1.1.6...v1.1.7) (2025-11-28)
 
 
