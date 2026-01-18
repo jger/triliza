@@ -18,7 +18,8 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "deploy": "touch out/.nojekyll && gh-pages -d out -t",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "browserslist": {
     "production": [
@@ -75,13 +76,5 @@
       "glob": "^11.1.0"
     },
     "tar": "^7.5.3"
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!(nanoid)/)"
-    ],
-    "moduleNameMapper": {
-      "^nanoid$": "<rootDir>/node_modules/nanoid/index.browser.js"
-    }
   }
 }
