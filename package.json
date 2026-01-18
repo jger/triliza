@@ -18,8 +18,7 @@
     "lint": "next lint",
     "predeploy": "npm run build",
     "deploy": "touch out/.nojekyll && gh-pages -d out -t",
-    "semantic-release": "semantic-release",
-    "postinstall": "patch-package"
+    "semantic-release": "semantic-release"
   },
   "browserslist": {
     "production": [
@@ -42,7 +41,6 @@
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "gh-pages": "^6.3.0",
-    "patch-package": "^8.0.1",
     "semantic-release": "^25.0.2",
     "typescript": "^5.9.3"
   },
