@@ -1,0 +1,4 @@
+:HL["/triliza/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/triliza/_next/static/css/ee966d6a66d19197.css","style"]
+:HL["/triliza/_next/static/css/c810bd4bdf624cd4.css","style"]
+0:{"buildId":"MyU2qrSWJNLx8pR7tuLwx","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
