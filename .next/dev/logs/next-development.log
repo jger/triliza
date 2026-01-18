@@ -1,0 +1,438 @@
+[00:00:00.992] Server  LOG     ✓ Ready in 805ms
+[00:01:24.018] Server  WARN    "shadow*" style props are deprecated. Use "boxShadow".
+[00:01:24.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:24.490] Browser WARN    "shadow*" style props are deprecated. Use "boxShadow".
+[00:01:24.747] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904329"
+                      >
+                        <head>
+                        <body
++                         className="__className_f78dd9"
+-                         className="__className_f78dd9 antigravity-scroll-lock"
+                        >
+                  ...
+
+[00:01:29.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:29.314] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904348"
+                      >
+                        <head>
+                        <body
++                         className="__className_f78dd9"
+-                         className="__className_f78dd9 antigravity-scroll-lock"
+                        >
+                  ...
+
+[00:01:33.444] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.444] Browser WARN    "shadow*" style props are deprecated. Use "boxShadow".
+[00:01:33.551] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904349"
+                      >
+                        <head>
+                        <body
++                         className="__className_f78dd9"
+-                         className="__className_f78dd9 antigravity-scroll-lock"
+                        >
+                  ...
+
+[00:01:37.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:37.219] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904350"
+                      >
+                        <head>
+                        <body
++                         className="__className_f78dd9"
+-                         className="__className_f78dd9 antigravity-scroll-lock"
+                        >
+                  ...
+
+[00:02:23.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:23.623] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904350"
+                      >
+                  ...
+
+[00:03:15.131] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:15.236] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904350"
+                      >
+                  ...
+
+[00:03:23.150] Browser WARN    "shadow*" style props are deprecated. Use "boxShadow".
+[00:03:26.598] Browser WARN    Cannot record touch end without a touch start.
+ Touch End: {"identifier":0,"pageX":1565,"pageY":247,"timestamp":4146}
+ Touch Bank: []
+[00:03:27.018] Browser WARN    props.pointerEvents is deprecated. Use style.pointerEvents
+[00:03:34.707] Browser ERROR   uncaughtError: ReferenceError: Can't find variable: _n_state
+[00:03:58.037] Browser LOG     Connection status changed: connecting
+[00:03:58.037] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O",14,"O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15],"gameStatus":"playing","moveCounter":6,"scoreO":0,"scoreX":0}
+[00:03:58.037] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O",14,"O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15],"gameStatus":"playing","moveCounter":6,"scoreO":0,"scoreX":0} Connection status: connecting
+[00:03:58.037] Browser LOG     Cannot send game state - not connected
+[00:03:58.037] Browser LOG     Host created offer: {"sdp":"v=0\r\no=- 8570907553460246820 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:6gqN\r\na=ice-pwd:sP+3TShA6Zn29mIW2MCITYow\r\na=ice-options:trickle\r\na=fingerprint:sha-256 9F:73:8D:BE:7F:52:5D:E1:FB:7D:17:A7:76:9D:E3:B2:DC:96:26:5D:15:5A:D1:47:0A:80:9A:53:32:48:1D:1C\r\na=setup:actpass\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n","type":"offer"}
+[00:03:58.037] Browser LOG     New ICE candidate: {"candidate":"candidate:1645510902 1 udp 2113939711 ff8661da-0388-467f-867d-edefc22abf4b.local 53308 typ host generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null}
+[00:03:58.037] Browser LOG     New ICE candidate: {"candidate":"candidate:499755661 1 udp 2113937151 ce25c4d7-9ad4-4481-8863-bae8c1d916a3.local 63620 typ host generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null}
+[00:03:58.037] Browser LOG     Host connection data ready
+[00:03:58.152] Browser LOG     New ICE candidate: {"candidate":"candidate:1152543178 1 udp 1677729535 77.183.16.252 63620 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null}
+[00:03:58.152] Browser LOG     New ICE candidate: {"candidate":"candidate:916493625 1 udp 1677732095 2a02:3100:2d96:b600:38c2:924e:d8b6:72fc 53308 typ srflx raddr :: rport 0 generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null}
+[00:03:58.152] Browser LOG     ICE gathering complete
+[00:04:02.938] Browser LOG     Host connection data ready (fallback)
+[00:04:08.042] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:08.042] Browser WARN    "shadow*" style props are deprecated. Use "boxShadow".
+[00:04:08.146] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <SegmentViewNode type="layout" pagePath="layout.tsx">
+                    <SegmentTrieNode>
+                    <link>
+                    <RootLayout>
+                      <html
+                        lang="en"
+-                       data-jetski-tab-id="387904350"
+                      >
+                  ...
+
+[00:04:08.707] Browser WARN    props.pointerEvents is deprecated. Use style.pointerEvents
+[00:04:14.199] Browser LOG     Connection status changed: connecting
+[00:04:14.199] Browser LOG     Sending game state update: {"board":[[1,2,3],[4,5,6],[7,8,9]],"currentPlayer":"X","dimension":3,"gameHistory":[],"gameStatus":"playing","moveCounter":0,"scoreO":0,"scoreX":0}
+[00:04:14.199] Browser LOG     Attempting to send game state: {"board":[[1,2,3],[4,5,6],[7,8,9]],"currentPlayer":"X","dimension":3,"gameHistory":[],"gameStatus":"playing","moveCounter":0,"scoreO":0,"scoreX":0} Connection status: connecting
+[00:04:14.199] Browser LOG     Cannot send game state - not connected
+[00:04:14.199] Browser LOG     Handling connection data: {"candidates":[{"candidate":"candidate:1645510902 1 udp 2113939711 ff8661da-0388-467f-867d-edefc22abf4b.local 53308 typ host generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null},{"candidate":"candidate:499755661 1 udp 2113937151 ce25c4d7-9ad4-4481-8863-bae8c1d916a3.local 63620 typ host generation 0 ufrag 6gqN network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":null}],"sdp":{"sdp":"v=0\r\no=- 8570907553460246820 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:6gqN\r\na=ice-pwd:sP+3TShA6Zn29mIW2MCITYow\r\na=ice-options:trickle\r\na=fingerprint:sha-256 9F:73:8D:BE:7F:52:5D:E1:FB:7D:17:A7:76:9D:E3:B2:DC:96:26:5D:15:5A:D1:47:0A:80:9A:53:32:48:1D:1C\r\na=setup:actpass\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n","type":"offer"},"type":"offer"}
+[00:04:14.199] Browser LOG     Guest created answer
+[00:04:14.199] Browser LOG     New ICE candidate: {"candidate":"candidate:1357313081 1 udp 2113937151 ff1f31c7-71ba-4f93-89eb-a3112ffedae0.local 57359 typ host generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"}
+[00:04:14.199] Browser LOG     New ICE candidate: {"candidate":"candidate:792452674 1 udp 2113939711 a8556fc0-b550-4541-9e85-a91988cda6d4.local 61812 typ host generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"}
+[00:04:14.199] Browser LOG     New ICE candidate: {"candidate":"candidate:2073021325 1 udp 1677732095 2a02:3100:2d96:b600:38c2:924e:d8b6:72fc 61812 typ srflx raddr :: rport 0 generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"}
+[00:04:14.199] Browser LOG     New ICE candidate: {"candidate":"candidate:161298302 1 udp 1677729535 77.183.16.252 57359 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"}
+[00:04:14.199] Browser LOG     Guest answer ready
+[00:04:14.199] Browser LOG     ICE gathering complete
+[00:04:19.083] Browser LOG     Guest answer ready (fallback)
+[00:04:20.477] Browser LOG     Handling connection data: {"candidates":[{"candidate":"candidate:1357313081 1 udp 2113937151 ff1f31c7-71ba-4f93-89eb-a3112ffedae0.local 57359 typ host generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"},{"candidate":"candidate:792452674 1 udp 2113939711 a8556fc0-b550-4541-9e85-a91988cda6d4.local 61812 typ host generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"},{"candidate":"candidate:2073021325 1 udp 1677732095 2a02:3100:2d96:b600:38c2:924e:d8b6:72fc 61812 typ srflx raddr :: rport 0 generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"},{"candidate":"candidate:161298302 1 udp 1677729535 77.183.16.252 57359 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag h2wy network-cost 999","sdpMLineIndex":0,"sdpMid":"0","usernameFragment":"h2wy"}],"sdp":{"sdp":"v=0\r\no=- 1268004102102144639 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:h2wy\r\na=ice-pwd:5F342sGZO+JHpML8OZLRQ3Fc\r\na=ice-options:trickle\r\na=fingerprint:sha-256 BC:2E:15:A1:03:12:1D:A4:1C:17:95:1F:FB:C1:0B:0F:5A:72:82:18:14:3B:10:C0:08:59:D7:25:DB:04:88:EF\r\na=setup:active\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n","type":"answer"},"type":"answer"}
+[00:04:20.477] Browser LOG     Host processed answer
+[00:04:20.477] Browser LOG     Host processed guest answer
+[00:04:20.477] Browser LOG     ICE connection state: checking
+[00:04:20.477] Browser LOG     Connection state changed: connecting
+[00:04:20.477] Browser LOG     ICE connection state: connected
+[00:04:20.477] Browser LOG     Connection state changed: connected
+[00:04:20.477] Browser LOG     Connection status changed: connected
+[00:04:20.477] Browser LOG     Data channel opened
+[00:04:20.477] Browser LOG     Connection status changed: connected
+[00:04:20.488] Browser LOG     ICE connection state: checking
+[00:04:20.488] Browser LOG     Connection state changed: connecting
+[00:04:20.488] Browser LOG     ICE connection state: connected
+[00:04:20.488] Browser LOG     Connection state changed: connected
+[00:04:20.488] Browser LOG     Connection status changed: connected
+[00:04:20.488] Browser LOG     Guest received data channel: {}
+[00:04:20.488] Browser LOG     Data channel opened
+[00:04:20.488] Browser LOG     Connection status changed: connected
+[00:04:24.499] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.499] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:24.499] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.499] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:24.499] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:24.499] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:24.499] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.499] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.502] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:24.502] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:24.502] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.502] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.502] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.502] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:24.502] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0}
+[00:04:24.502] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,7,"X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14],"gameStatus":"playing","moveCounter":7,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.933] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.933] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.933] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.933] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.933] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.933] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:27.933] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.933] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.940] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.940] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:27.940] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.940] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.940] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.940] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:27.940] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:27.940] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,12,"O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7],"gameStatus":"playing","moveCounter":8,"scoreO":0,"scoreX":0}
+[00:04:31.179] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.179] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.179] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.179] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.179] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.179] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:31.179] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.179] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.181] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.182] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:31.182] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.182] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.182] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.182] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:31.182] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:31.182] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X",9,10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12],"gameStatus":"playing","moveCounter":9,"scoreO":0,"scoreX":0}
+[00:04:34.937] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.937] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.937] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.937] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.937] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.937] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:34.937] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.937] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.945] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.946] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0} Connection status: connected
+[00:04:34.946] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.946] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.946] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.946] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0},"type":"gameState"}
+[00:04:34.946] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:34.946] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X",20],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9],"gameStatus":"playing","moveCounter":10,"scoreO":0,"scoreX":0}
+[00:04:37.672] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.672] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.672] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.672] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.672] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.672] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1} Connection status: connected
+[00:04:37.672] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.672] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.673] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.673] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1} Connection status: connected
+[00:04:37.673] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.673] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.673] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.674] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:37.674] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:37.674] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O",10],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20],"gameStatus":"playing","moveCounter":11,"scoreO":0,"scoreX":1}
+[00:04:45.975] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.976] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.976] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.976] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.976] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.976] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1} Connection status: connected
+[00:04:45.976] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.976] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.979] Browser LOG     Sending game state update: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.979] Browser LOG     Attempting to send game state: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1} Connection status: connected
+[00:04:45.979] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.979] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.979] Browser LOG     Received message: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.979] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1},"type":"gameState"}
+[00:04:45.979] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:45.979] Browser LOG     Receiving game state update: {"board":[[1,2,3,4,5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10],"gameStatus":"playing","moveCounter":12,"scoreO":0,"scoreX":1}
+[00:04:49.466] Browser LOG     Received message: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.466] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.466] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.466] Browser LOG     Receiving game state update: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.466] Browser LOG     Sending game state update: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.466] Browser LOG     Attempting to send game state: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2} Connection status: connected
+[00:04:49.466] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.466] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.467] Browser LOG     Sending game state update: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.467] Browser LOG     Attempting to send game state: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2} Connection status: connected
+[00:04:49.467] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.467] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.467] Browser LOG     Received message: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.467] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2},"type":"gameState"}
+[00:04:49.467] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:49.467] Browser LOG     Receiving game state update: {"board":[[1,2,3,"X",5],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"O","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4],"gameStatus":"playing","moveCounter":13,"scoreO":0,"scoreX":2}
+[00:04:53.049] Browser LOG     Received message: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.049] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.049] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.049] Browser LOG     Receiving game state update: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.049] Browser LOG     Sending game state update: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.049] Browser LOG     Attempting to send game state: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2} Connection status: connected
+[00:04:53.049] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.049] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.050] Browser LOG     Sending game state update: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.050] Browser LOG     Attempting to send game state: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2} Connection status: connected
+[00:04:53.050] Browser LOG     Sending game state via WebRTC: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.051] Browser LOG     Sending data: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.051] Browser LOG     Received message: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.051] Browser LOG     WebRTC data received: {"payload":{"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2},"type":"gameState"}
+[00:04:53.051] Browser LOG     Updating game state from remote player: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:04:53.051] Browser LOG     Receiving game state update: {"board":[[1,2,3,"X","O"],[6,"O","X","O","O"],[11,"X","O","X","O"],[16,"X","O","X","X"],[21,22,23,24,25]],"currentPlayer":"X","dimension":5,"gameHistory":[8,13,17,18,19,15,14,7,12,9,20,10,4,5],"gameStatus":"playing","moveCounter":14,"scoreO":2,"scoreX":2}
+[00:05:06.529] Browser LOG     Disconnecting...
+[00:05:06.529] Browser LOG     Connection status changed: disconnected
+[00:05:06.529] Browser LOG     Data channel closed
+[00:05:06.529] Browser LOG     Connection status changed: disconnected
