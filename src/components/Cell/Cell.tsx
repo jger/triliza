@@ -4,24 +4,34 @@ import { isCellEmpty } from '../../utils/gameLogic';
 import { GAME_CONFIG } from '../../constants/constants';
 import '../../styles/cursors.css';
 
-const Cell = ({ value, onPress, disabled = false, currentPlayer, onMouseEnter, cellSize, fontSize }) => {
+interface CellProps {
+  value: any;
+  onPress?: () => void;
+  disabled?: boolean;
+  currentPlayer?: string;
+  onMouseEnter?: () => void;
+  cellSize: number;
+  fontSize: number;
+}
+
+const Cell: React.FC<CellProps> = ({ value, onPress, disabled = false, currentPlayer, onMouseEnter, cellSize, fontSize }) => {
   const isEmpty = isCellEmpty(value);
-  
+
   const dynamicCellStyle = {
     ...styles.cell,
     width: cellSize,
     height: cellSize,
     margin: GAME_CONFIG.CELL_MARGIN,
   };
-  
+
   const cellStyle = isEmpty ? [dynamicCellStyle, styles.empty] : dynamicCellStyle;
-  const textStyle = isEmpty 
-    ? [styles.text, styles.emptyText, { fontSize }] 
+  const textStyle = isEmpty
+    ? [styles.text, styles.emptyText, { fontSize }]
     : [styles.text, { fontSize }];
 
   return (
-    <Pressable 
-      style={[cellStyle, disabled && styles.disabled]} 
+    <Pressable
+      style={[cellStyle, disabled && styles.disabled]}
       onPress={disabled ? undefined : onPress}
       onMouseEnter={onMouseEnter}
     >

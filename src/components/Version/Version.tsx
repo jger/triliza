@@ -3,8 +3,8 @@ import { View, Text, StyleSheet } from 'react-native-web';
 
 const Version = () => {
   // Version will be injected during build process
-  const version = process.env.REACT_APP_VERSION || '1.0.0';
-  
+  const version = process.env.NEXT_PUBLIC_VERSION || '1.0.0';
+
   return (
     <View style={styles.container}>
       <Text style={styles.version}>v{version}</Text>

@@ -1,6 +1,22 @@
 import { nanoid } from 'nanoid';
 
 export class WebRTCManager {
+  peerConnection: RTCPeerConnection | null;
+  dataChannel: RTCDataChannel | null;
+  connectionStatus: string;
+  onDataReceived: ((data: any) => void) | null;
+  onConnectionChange: ((status: string) => void) | null;
+  isHost: boolean;
+  connectionTimeout: NodeJS.Timeout | null;
+  connectionTimer: NodeJS.Timeout | null;
+  timeRemaining: number;
+  onTimerUpdate: ((time: number) => void) | null;
+  invitationCode: string | null = null;
+  iceCandidates: RTCIceCandidate[] = [];
+  iceGatheringComplete: boolean = false;
+  localOffer: RTCSessionDescriptionInit | null = null;
+  localAnswer: RTCSessionDescriptionInit | null = null;
+
   constructor() {
     this.peerConnection = null;
     this.dataChannel = null;
@@ -42,11 +58,11 @@ export class WebRTCManager {
           ordered: true
         });
         this.setupDataChannel(this.dataChannel);
-        
+
         // Create offer
         const offer = await this.peerConnection.createOffer();
         await this.peerConnection.setLocalDescription(offer);
-        
+
         // Store offer for manual sharing
         this.localOffer = offer;
         console.log('Host created offer:', offer);
@@ -62,7 +78,7 @@ export class WebRTCManager {
       // Set connection timeout and timer
       this.timeRemaining = 300; // 5 minutes in seconds
       this.startTimer();
-      
+
       this.connectionTimeout = setTimeout(() => {
         if (this.connectionStatus === 'connecting') {
           console.log('Connection timeout');
@@ -97,7 +113,7 @@ export class WebRTCManager {
     this.peerConnection.onconnectionstatechange = () => {
       const state = this.peerConnection.connectionState;
       console.log('Connection state changed:', state);
-      
+
       if (state === 'connected') {
         if (this.connectionTimeout) {
           clearTimeout(this.connectionTimeout);
@@ -162,15 +178,15 @@ export class WebRTCManager {
     if (!this.peerConnection) {
       throw new Error('Peer connection not initialized');
     }
-    
+
     try {
       console.log('Guest connecting with offer:', offer);
       await this.peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
-      
+
       // Create answer
       const answer = await this.peerConnection.createAnswer();
       await this.peerConnection.setLocalDescription(answer);
-      
+
       // Store answer for host to pick up
       localStorage.setItem(`guestAnswer_${this.invitationCode}`, JSON.stringify(answer));
       console.log('Guest created answer:', answer);
@@ -184,7 +200,7 @@ export class WebRTCManager {
     if (!this.peerConnection) {
       throw new Error('Peer connection not initialized');
     }
-    
+
     try {
       console.log('Host connecting with answer:', answer);
       await this.peerConnection.setRemoteDescription(new RTCSessionDescription(answer));
@@ -198,7 +214,7 @@ export class WebRTCManager {
     if (!this.peerConnection) {
       throw new Error('Peer connection not initialized');
     }
-    
+
     try {
       console.log('Adding ICE candidate:', candidate);
       await this.peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
@@ -225,7 +241,7 @@ export class WebRTCManager {
     this.connectionTimer = setInterval(() => {
       this.timeRemaining--;
       this.onTimerUpdate?.(this.timeRemaining);
-      
+
       if (this.timeRemaining <= 0) {
         this.stopTimer();
       }
@@ -255,15 +271,15 @@ export class WebRTCManager {
       this.dataChannel.close();
       this.dataChannel = null;
     }
-    
+
     if (this.peerConnection) {
       this.peerConnection.close();
       this.peerConnection = null;
     }
-    
+
     this.connectionStatus = 'disconnected';
     this.onConnectionChange?.('disconnected');
-    
+
     // Clean up localStorage
     try {
       if (this.invitationCode) {
@@ -314,31 +330,31 @@ export class WebRTCManager {
       if (data.type === 'offer' && !this.isHost) {
         // Guest handles host's offer
         await this.peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
-        
+
         // Add ICE candidates
         for (const candidate of data.candidates) {
           await this.peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
         }
-        
+
         // Create answer
         const answer = await this.peerConnection.createAnswer();
         await this.peerConnection.setLocalDescription(answer);
         this.localAnswer = answer;
-        
+
         console.log('Guest created answer');
-        
+
       } else if (data.type === 'answer' && this.isHost) {
         // Host handles guest's answer
         await this.peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
-        
+
         // Add ICE candidates
         for (const candidate of data.candidates) {
           await this.peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
         }
-        
+
         console.log('Host processed answer');
       }
-      
+
     } catch (error) {
       console.error('Failed to handle connection string:', error);
       throw error;

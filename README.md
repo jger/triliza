@@ -2,7 +2,7 @@
 
 **Current Version: 1.1.8**
 
-A modern implementation of the classic Tic-Tac-Toe game built with React Native Web, featuring enhanced gameplay in higher dimensions. Experience the timeless strategy game with a beautiful, responsive interface.
+A modern implementation of the classic Tic-Tac-Toe game built with **Next.js** and **React Native Web**, featuring enhanced gameplay in higher dimensions. Experience the timeless strategy game with a beautiful, responsive interface.
 
 ## 🎮 Play Online
 
@@ -20,6 +20,7 @@ A modern implementation of the classic Tic-Tac-Toe game built with React Native 
 - **Responsive design** - Works perfectly on desktop and mobile devices
 - **Modern UI** - Clean, intuitive interface built with React
 - **Cross-platform** - Built with React Native Web for universal compatibility
+- **TypeScript Support** - Fully typed codebase for better stability and developer experience
 - **Automatic version display** - Shows current app version in bottom-right corner
 
 ## 🚀 Coming Soon
@@ -29,7 +30,7 @@ A modern implementation of the classic Tic-Tac-Toe game built with React Native 
 - Additional game dimensions
 - Score tracking and statistics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and converted to React Native Web.
+This project was originally bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has been **migrated to Next.js**.
 
 ## Installation
 
@@ -45,18 +46,20 @@ See [SCRIPTS.md](SCRIPTS.md) for detailed information about available npm script
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000/triliza](http://localhost:3000/triliza) to view it in the browser.
 
 ## Development
 
 ```bash
-npm start
-npm test
-npm run build
+npm run dev    # Start development server
+npm run lint   # Run linter
+npm run build  # Build for production
 ```
+
+> **Note:** Due to GitHub Pages configuration, the app runs at [http://localhost:3000/triliza](http://localhost:3000/triliza) locally. The root URL will return a 404.
 
 ## Deployment
 
