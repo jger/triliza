@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/jger/triliza/compare/v1.1.8...v1.2.0) (2026-01-18)
+
+
+### Bug Fixes
+
+* remove `test-exclude` patch and `patch-package` dependency. ([4582904](https://github.com/jger/triliza/commit/45829046ae5b11efd62604100dc2d1e2bfc836d6))
+
+
+### Features
+
+* Migrate project to Next.js and TypeScript. ([b217115](https://github.com/jger/triliza/commit/b217115e0976bc96918709e81e7fd813d00b378c))
+
 ## [1.1.8](https://github.com/jger/triliza/compare/v1.1.7...v1.1.8) (2025-12-13)
 
 
