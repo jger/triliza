@@ -47,5 +47,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "docs: update version in README to $NEW_VERSION"
+          git diff --quiet README.md && git diff --staged --quiet README.md || git commit -m "docs: update version in README to $NEW_VERSION"
           git push 
