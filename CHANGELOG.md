@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/jger/triliza/compare/v1.2.0...v1.2.1) (2026-01-22)
+
+
+### Bug Fixes
+
+* release ([8265c73](https://github.com/jger/triliza/commit/8265c7310945d6e47aa029d5db77a29d0c047670))
+
 # [1.2.0](https://github.com/jger/triliza/compare/v1.1.8...v1.2.0) (2026-01-18)
 
 
