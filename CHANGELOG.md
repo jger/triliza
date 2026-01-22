@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/jger/triliza/compare/v1.2.1...v1.3.0) (2026-01-22)
+
+
+### Features
+
+* update tar to 7.5.6 and add undici, diff, and lodash dependencies ([252c15d](https://github.com/jger/triliza/commit/252c15d74ef827187e6eea99d8c0bbbe5d214fac))
+
 ## [1.2.1](https://github.com/jger/triliza/compare/v1.2.0...v1.2.1) (2026-01-22)
 
 
