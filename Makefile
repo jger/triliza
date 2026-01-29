@@ -1,4 +1,7 @@
-.PHONY: deploy build
+.PHONY: deploy build audit-fix
+
+audit-fix:
+	npm audit fix
 
 deploy: build
 	@echo "Deploying to GitHub Pages..."
