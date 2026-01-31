@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/jger/triliza/compare/v1.3.1...v1.3.2) (2026-01-31)
+
+
+### Bug Fixes
+
+* update tar dependency version to use tilde for 7.5.7 ([24e0cb6](https://github.com/jger/triliza/commit/24e0cb6b267b3a4aa0588f41edec7aec0bb96ffa))
+
 ## [1.3.1](https://github.com/jger/triliza/compare/v1.3.0...v1.3.1) (2026-01-29)
 
 
