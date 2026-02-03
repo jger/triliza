@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/jger/triliza/compare/v1.3.2...v1.3.3) (2026-02-03)
+
+
+### Bug Fixes
+
+* update tar dependency version to 7.5.7 in package-lock.json ([f800d8f](https://github.com/jger/triliza/commit/f800d8ff5f2d8cb6a0a89ecbf05117c5e1e85a96))
+
 ## [1.3.2](https://github.com/jger/triliza/compare/v1.3.1...v1.3.2) (2026-01-31)
 
 
