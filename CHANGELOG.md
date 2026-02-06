@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/jger/triliza/compare/v1.3.3...v1.3.4) (2026-02-06)
+
+
+### Bug Fixes
+
+* update npm and related dependencies to latest versions in package.json and package-lock.json ([7a98e85](https://github.com/jger/triliza/commit/7a98e85e028131225901005ad752bf75cb8cb71a))
+
 ## [1.3.3](https://github.com/jger/triliza/compare/v1.3.2...v1.3.3) (2026-02-03)
 
 
