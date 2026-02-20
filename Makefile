@@ -3,8 +3,9 @@
 audit-fix:
 	npm audit fix
 
-deploy: build
+deploy:
 	git pull
+	$(MAKE) build
 	@echo "Deploying to GitHub Pages..."
 	npm run deploy
 
