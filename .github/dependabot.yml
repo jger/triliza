@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    ignore:
+      - dependency-name: "ajv"
+        update-types: ["security-update"]
+      - dependency-name: "minimatch"
+        update-types: ["security-update"]
