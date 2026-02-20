@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/jger/triliza/compare/v1.3.4...v1.3.5) (2026-02-20)
+
+
+### Bug Fixes
+
+* update dependencies and modify deploy target in Makefile ([2eee748](https://github.com/jger/triliza/commit/2eee74889cb2ff4b3f64c6bf9a5e139c89857485))
+
 ## [1.3.4](https://github.com/jger/triliza/compare/v1.3.3...v1.3.4) (2026-02-06)
 
 
