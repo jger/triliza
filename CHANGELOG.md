@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/jger/triliza/compare/v1.3.5...v1.3.6) (2026-03-08)
+
+
+### Bug Fixes
+
+* replace @semantic-release/npm with @semantic-release/exec ([00d6745](https://github.com/jger/triliza/commit/00d67453bff19c5277f091a5a9c3f05610479ba7))
+
 ## [1.3.5](https://github.com/jger/triliza/compare/v1.3.4...v1.3.5) (2026-02-20)
 
 
