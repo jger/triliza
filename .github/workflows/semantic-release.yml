@@ -36,7 +36,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npx -y -p semantic-release -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git -p @semantic-release/github semantic-release
 
       - name: Update README with new version
         if: success()
