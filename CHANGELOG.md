@@ -1,3 +1,10 @@
+## [1.3.7](https://github.com/jger/triliza/compare/v1.3.6...v1.3.7) (2026-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update eslint and next packages to version 16.2.5 in package.json and package-lock.json ([7eec5d6](https://github.com/jger/triliza/commit/7eec5d6e70ced22da31f9462216f461ce0caf4a0))
+
 ## [1.3.6](https://github.com/jger/triliza/compare/v1.3.5...v1.3.6) (2026-03-08)
 
 
