@@ -1,3 +1,10 @@
+## [1.3.8](https://github.com/jger/triliza/compare/v1.3.7...v1.3.8) (2026-07-01)
+
+
+### Bug Fixes
+
+* update Makefile and package-lock.json ([fc592d9](https://github.com/jger/triliza/commit/fc592d91ac08b9b60befa3ab7b6a5006fff5c6a4))
+
 ## [1.3.7](https://github.com/jger/triliza/compare/v1.3.6...v1.3.7) (2026-05-17)
 
 
