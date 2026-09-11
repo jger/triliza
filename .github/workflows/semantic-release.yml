@@ -37,15 +37,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -y -p semantic-release -p @semantic-release/changelog -p @semantic-release/exec -p @semantic-release/git -p @semantic-release/github semantic-release
-
-      - name: Update README with new version
-        if: success()
-        run: |
-          NEW_VERSION=$(node -p "require('./package.json').version")
-          sed -i "s/\*\*Current Version: .*\*\*/**Current Version: $NEW_VERSION**/" README.md
-          sed -i "s/\*\*Version: .*\*\*/**Version: $NEW_VERSION**/" README.md
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add README.md
-          git diff --quiet README.md && git diff --staged --quiet README.md || git commit -m "docs: update version in README to $NEW_VERSION"
-          git push 

@@ -5,9 +5,12 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     ["@semantic-release/exec", {
-      "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version"
+      "prepareCmd": "npm version ${nextRelease.version} --no-git-tag-version && sed -i 's/\\*\\*Current Version: .*\\*\\*/\\*\\*Current Version: '${nextRelease.version}'\\*\\*/' README.md && sed -i 's/\\*\\*Version: .*\\*\\*/\\*\\*Version: '${nextRelease.version}'\\*\\*/' README.md"
     }],
-    "@semantic-release/git",
+    ["@semantic-release/git", {
+      "assets": ["package.json", "package-lock.json", "CHANGELOG.md", "README.md"],
+      "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+    }],
     "@semantic-release/github"
   ]
 } 
