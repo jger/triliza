@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://jger.github.io/triliza",
   "dependencies": {
-    "eslint-config-next": "^16.2.5",
+    "eslint-config-next": "^16.3.8",
     "nanoid": "^5.1.16",
-    "next": "^16.3.3",
+    "next": "^16.3.8",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-native-web": "^0.21.0"
