@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://jger.github.io/triliza",
   "dependencies": {
-    "eslint-config-next": "^16.3.8",
     "nanoid": "^5.1.16",
     "next": "^16.3.8",
     "react": "^19.2.3",
@@ -20,7 +19,8 @@
     "deploy": "bash scripts/deploy-pages.sh",
     "semantic-release": "semantic-release",
     "test": "echo \"No tests specified\" && exit 0",
-    "audit:fix": "npm audit fix"
+    "audit": "npm audit --omit=dev",
+    "audit:fix": "npm audit fix --omit=dev"
   },
   "browserslist": {
     "production": [
@@ -38,6 +38,8 @@
     "@types/node": "^25.0.9",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.2",
     "typescript": "^5.9.3"
   },
   "overrides": {
